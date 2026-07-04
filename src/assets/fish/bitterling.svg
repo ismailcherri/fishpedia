@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Bitterling">
+  <defs>
+    <linearGradient id="bib" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#57626c"/>
+      <stop offset="0.4" stop-color="#a8b6be"/>
+      <stop offset="0.68" stop-color="#e9edee"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <!-- tail -->
+  <path d="M228 100 L262 80 L255 98 L264 100 L255 102 L262 120 Z" fill="#7b8894" stroke="#48525c" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: small, deep -->
+  <path d="M66 100 C76 78 100 62 130 58 C162 54 192 66 208 82 C218 92 224 97 226 100 C224 106 218 112 208 118 C192 132 162 142 132 138 C102 134 78 122 66 100 Z" fill="url(#bib)" stroke="#48525c" stroke-width="2.5"/>
+  <!-- blue-green stripe on rear flank (key marker) -->
+  <path d="M162 98 C186 96 210 97 228 100 C210 103 186 104 162 102 C160 101 160 99 162 98 Z" fill="#2e8d8a" stroke="#1e5f5d" stroke-width="1.4"/>
+  <!-- dorsal fin -->
+  <path d="M136 60 C144 42 162 36 178 42 C172 52 169 62 168 72 Z" fill="#7b8894" stroke="#48525c" stroke-width="2" stroke-linejoin="round"/>
+  <!-- anal fin: pinkish -->
+  <path d="M168 130 C172 141 183 147 194 144 C190 136 188 129 187 122 Z" fill="#c98b96" stroke="#8a4a56" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic -->
+  <path d="M124 132 C128 142 138 147 147 145 C143 138 141 132 140 126 Z" fill="#93a0aa" stroke="#48525c" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral -->
+  <path d="M96 110 C102 119 112 123 120 121 C116 114 114 109 113 104 Z" fill="#93a0aa" stroke="#48525c" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pink spawning blush on flank -->
+  <ellipse cx="118" cy="96" rx="26" ry="18" fill="#d99aa4" opacity="0.4"/>
+  <!-- silver sheen -->
+  <path d="M96 74 C130 60 168 62 198 80" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+  <!-- scale hint: large scales -->
+  <g fill="none" stroke="#48525c" stroke-width="1.1" opacity="0.3">
+    <path d="M120 72 q6 8 0 16 M120 88 q6 8 0 16 M120 104 q6 8 0 16"/>
+    <path d="M138 66 q6 8 0 16 M138 82 q6 8 0 16 M138 98 q6 8 0 16 M138 114 q5 7 0 14"/>
+    <path d="M156 66 q6 8 0 16 M156 82 q6 8 0 16 M156 98 q6 8 0 16 M156 114 q5 7 0 14"/>
+    <path d="M174 70 q6 8 0 16 M174 86 q6 8 0 16 M174 102 q5 7 0 14"/>
+    <path d="M192 76 q5 7 0 14 M192 90 q5 7 0 14 M192 104 q4 6 0 12"/>
+  </g>
+  <!-- gill cover -->
+  <path d="M104 74 C112 86 112 112 105 124" fill="none" stroke="#48525c" stroke-width="2" stroke-linecap="round"/>
+  <!-- tiny mouth -->
+  <path d="M66 100 C72 97 78 96 84 96" fill="none" stroke="#48525c" stroke-width="2" stroke-linecap="round"/>
+  <!-- eye: large with orange upper iris -->
+  <circle cx="88" cy="88" r="7.5" fill="#e8e2ce"/>
+  <path d="M82 84 A7.5 7.5 0 0 1 94 84 L88 88 Z" fill="#d98a3c"/>
+  <circle cx="88" cy="88" r="3.6" fill="#1e2124"/>
+  <circle cx="89.6" cy="86.4" r="1.2" fill="#ffffff"/>
+</svg>

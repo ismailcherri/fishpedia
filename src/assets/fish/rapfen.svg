@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Rapfen">
+  <defs>
+    <linearGradient id="rb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3f4c5c"/>
+      <stop offset="0.5" stop-color="#8fa0ab"/>
+      <stop offset="0.78" stop-color="#dbe2e2"/>
+      <stop offset="1" stop-color="#f6f8f6"/>
+    </linearGradient>
+  </defs>
+  <!-- big forked tail -->
+  <path d="M266 100 L306 72 L294 98 L306 100 L294 102 L306 128 Z" fill="#5b6c78" stroke="#37424c" stroke-width="2" stroke-linejoin="round"/>
+  <!-- torpedo body -->
+  <path d="M18 100 C34 82 66 70 108 66 C162 62 216 70 248 82 C262 88 270 94 272 100 C270 106 262 112 248 118 C216 130 162 138 108 134 C66 130 34 118 18 100 Z" fill="url(#rb)" stroke="#37424c" stroke-width="2.5"/>
+  <!-- pointed dorsal -->
+  <path d="M156 66 L166 38 L180 40 C176 50 173 60 172 70 Z" fill="#5b6c78" stroke="#37424c" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pointed anal fin -->
+  <path d="M198 124 L206 146 L218 142 C214 134 212 126 211 118 Z" fill="#5b6c78" stroke="#37424c" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic -->
+  <path d="M136 130 C140 141 150 146 159 144 C155 137 153 131 152 125 Z" fill="#6d7e89" stroke="#37424c" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral: pointed -->
+  <path d="M90 110 L102 126 L112 120 C107 113 104 107 103 102 Z" fill="#6d7e89" stroke="#37424c" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- keel hint between pelvic and anal -->
+  <path d="M158 134 C172 137 186 137 198 134" fill="none" stroke="#37424c" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <!-- deeply cleft, upturned mouth -->
+  <path d="M18 100 C28 90 42 84 56 82" fill="none" stroke="#37424c" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M16 96 C22 100 28 104 38 106" fill="none" stroke="#37424c" stroke-width="2" stroke-linecap="round"/>
+  <!-- gill cover -->
+  <path d="M84 76 C94 86 94 112 85 124" fill="none" stroke="#37424c" stroke-width="2" stroke-linecap="round"/>
+  <!-- lateral line -->
+  <path d="M92 102 C150 108 210 106 252 100" fill="none" stroke="#37424c" stroke-width="1.4" stroke-dasharray="1 5" stroke-linecap="round" opacity="0.7"/>
+  <!-- silver sheen -->
+  <path d="M64 82 C130 70 200 72 244 84" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.4"/>
+  <!-- eye -->
+  <circle cx="58" cy="88" r="6.5" fill="#e8e4c8"/>
+  <circle cx="58" cy="88" r="3.2" fill="#1d2126"/>
+  <circle cx="59.4" cy="86.6" r="1.1" fill="#ffffff"/>
+</svg>

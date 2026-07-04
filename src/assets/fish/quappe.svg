@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Quappe">
+  <defs>
+    <linearGradient id="qb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5c4a2e"/>
+      <stop offset="0.55" stop-color="#8f7443"/>
+      <stop offset="0.8" stop-color="#d9c99a"/>
+      <stop offset="1" stop-color="#f1e8cf"/>
+    </linearGradient>
+  </defs>
+  <!-- tail: rounded -->
+  <path d="M282 100 C294 92 302 90 308 93 C304 99 304 105 307 110 C300 113 291 110 282 104 Z" fill="#6e5a35" stroke="#453a22" stroke-width="2" stroke-linejoin="round"/>
+  <!-- very long second dorsal -->
+  <path d="M128 70 C176 60 240 62 280 76 L276 86 C238 74 178 72 132 80 Z" fill="#7d6840" stroke="#453a22" stroke-width="2" stroke-linejoin="round"/>
+  <!-- long anal fin -->
+  <path d="M136 128 C180 140 240 140 278 126 L274 118 C240 130 184 130 140 120 Z" fill="#7d6840" stroke="#453a22" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body -->
+  <path d="M18 100 C28 84 54 72 90 70 C150 66 226 74 268 86 C280 90 286 95 288 100 C286 106 278 110 266 113 C224 124 150 130 92 126 C54 123 28 114 18 100 Z" fill="url(#qb)" stroke="#453a22" stroke-width="2.5"/>
+  <!-- first short dorsal -->
+  <path d="M104 72 C112 62 124 60 134 64 C130 70 128 76 127 80 Z" fill="#7d6840" stroke="#453a22" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic fin under throat -->
+  <path d="M76 118 C78 128 86 133 94 132 C91 126 89 120 89 116 Z" fill="#7d6840" stroke="#453a22" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral -->
+  <path d="M92 106 C98 115 108 119 116 117 C112 111 110 106 109 102 Z" fill="#8a7449" stroke="#453a22" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- marbled pattern -->
+  <g fill="#4c3d22" opacity="0.5">
+    <path d="M116 84 C126 80 138 82 144 88 C136 92 124 90 116 84 Z"/>
+    <path d="M158 80 C170 76 182 80 188 86 C178 90 166 86 158 80 Z"/>
+    <path d="M204 86 C214 82 226 86 232 92 C222 96 212 92 204 86 Z"/>
+    <path d="M132 104 C142 100 152 102 158 108 C150 112 140 110 132 104 Z"/>
+    <path d="M178 102 C188 98 198 102 204 108 C194 112 186 108 178 102 Z"/>
+    <path d="M222 102 C230 99 240 101 246 106 C238 110 228 107 222 102 Z"/>
+    <path d="M246 90 C254 87 262 89 266 94 C258 97 250 95 246 90 Z"/>
+  </g>
+  <!-- gill cover -->
+  <path d="M84 82 C92 90 92 108 85 118" fill="none" stroke="#453a22" stroke-width="2" stroke-linecap="round"/>
+  <!-- mouth -->
+  <path d="M18 100 C28 96 40 94 50 94" fill="none" stroke="#453a22" stroke-width="2" stroke-linecap="round"/>
+  <!-- single chin barbel -->
+  <path d="M34 105 C34 116 30 124 22 129" fill="none" stroke="#453a22" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- eye -->
+  <circle cx="52" cy="88" r="5.5" fill="#e3d3a3"/>
+  <circle cx="52" cy="88" r="2.8" fill="#221b10"/>
+  <circle cx="53" cy="87" r="1" fill="#ffffff"/>
+</svg>

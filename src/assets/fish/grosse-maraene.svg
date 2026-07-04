@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Große Maräne">
+  <defs>
+    <linearGradient id="gmb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4d5a66"/>
+      <stop offset="0.4" stop-color="#a2b2bd"/>
+      <stop offset="0.68" stop-color="#e7ecee"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <!-- tail: deeply forked -->
+  <path d="M250 100 L288 76 L278 97 L290 100 L278 103 L288 124 Z" fill="#69798a" stroke="#3e4a56" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: laterally compressed, silver -->
+  <path d="M32 100 C44 84 70 72 106 68 C150 63 192 70 218 82 C232 88 240 95 242 100 C240 106 232 112 218 117 C192 127 150 132 108 128 C72 125 46 114 32 100 Z" fill="url(#gmb)" stroke="#3e4a56" stroke-width="2.5"/>
+  <!-- small head emphasis -->
+  <path d="M80 78 C89 88 89 112 81 120" fill="none" stroke="#3e4a56" stroke-width="2" stroke-linecap="round"/>
+  <!-- dorsal fin -->
+  <path d="M140 68 L149 46 L164 49 C159 58 156 66 155 75 Z" fill="#69798a" stroke="#3e4a56" stroke-width="2" stroke-linejoin="round"/>
+  <!-- adipose fin (salmonid marker) -->
+  <path d="M210 82 C215 77 222 77 226 80 C223 84 222 87 222 90 L212 87 Z" fill="#69798a" stroke="#3e4a56" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- anal fin -->
+  <path d="M192 122 C196 132 206 137 215 134 C211 128 209 122 208 116 Z" fill="#69798a" stroke="#3e4a56" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic -->
+  <path d="M136 126 C140 136 150 141 159 139 C155 132 153 126 152 121 Z" fill="#7b8b9a" stroke="#3e4a56" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral -->
+  <path d="M88 108 C94 117 105 121 113 119 C109 112 107 107 106 102 Z" fill="#7b8b9a" stroke="#3e4a56" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- large scales hint -->
+  <g fill="none" stroke="#3e4a56" stroke-width="1" opacity="0.28">
+    <path d="M108 78 q6 8 0 16 M108 94 q6 8 0 16 M108 110 q5 7 0 14"/>
+    <path d="M126 72 q6 8 0 16 M126 88 q6 8 0 16 M126 104 q6 8 0 16"/>
+    <path d="M144 70 q6 8 0 16 M144 86 q6 8 0 16 M144 102 q6 8 0 16"/>
+    <path d="M162 72 q6 8 0 16 M162 88 q6 8 0 16 M162 104 q5 7 0 14"/>
+    <path d="M180 74 q6 8 0 16 M180 90 q6 8 0 16"/>
+    <path d="M198 78 q5 7 0 14 M198 92 q5 7 0 14"/>
+    <path d="M216 84 q4 6 0 12 M216 96 q4 6 0 12"/>
+  </g>
+  <!-- bright silver sheen -->
+  <path d="M72 82 C130 68 190 70 226 84" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.65"/>
+  <!-- small, slightly underslung mouth -->
+  <path d="M32 100 C39 98 46 97 53 97" fill="none" stroke="#3e4a56" stroke-width="2" stroke-linecap="round"/>
+  <!-- eye -->
+  <circle cx="58" cy="90" r="6.5" fill="#e9e9dd"/>
+  <circle cx="58" cy="90" r="3.2" fill="#1c2126"/>
+  <circle cx="59.4" cy="88.6" r="1.1" fill="#ffffff"/>
+</svg>

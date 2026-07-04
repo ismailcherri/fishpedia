@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Blei">
+  <defs>
+    <linearGradient id="blb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4c4636"/>
+      <stop offset="0.5" stop-color="#8a7f5c"/>
+      <stop offset="0.78" stop-color="#d6cba4"/>
+      <stop offset="1" stop-color="#efe9d6"/>
+    </linearGradient>
+  </defs>
+  <!-- tail: dark, deeply forked with longer lower lobe -->
+  <path d="M252 100 L282 78 L276 96 L286 100 L274 106 L280 128 Z" fill="#4a4433" stroke="#2e2a1e" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: very deep, laterally compressed -->
+  <path d="M46 100 C56 74 82 52 116 48 C154 44 192 56 214 76 C228 88 236 96 238 100 C236 106 228 114 216 122 C192 138 152 148 116 144 C82 140 58 126 46 100 Z" fill="url(#blb)" stroke="#2e2a1e" stroke-width="2.5"/>
+  <!-- small head hint -->
+  <path d="M84 66 C94 82 94 116 85 130" fill="none" stroke="#2e2a1e" stroke-width="2" stroke-linecap="round"/>
+  <!-- dorsal fin: short, high, dark -->
+  <path d="M158 52 L168 28 L182 32 C177 42 174 52 173 62 Z" fill="#57503c" stroke="#2e2a1e" stroke-width="2" stroke-linejoin="round"/>
+  <!-- long anal fin: characteristic -->
+  <path d="M172 138 C192 146 216 144 234 132 C230 126 228 120 227 114 C212 126 192 132 176 130 Z" fill="#57503c" stroke="#2e2a1e" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic -->
+  <path d="M128 138 C132 148 142 153 151 151 C147 144 145 138 144 132 Z" fill="#635b44" stroke="#2e2a1e" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral -->
+  <path d="M92 112 C98 122 109 126 117 124 C113 117 111 112 110 107 Z" fill="#635b44" stroke="#2e2a1e" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- bronze sheen -->
+  <path d="M84 74 C130 56 180 58 212 78" fill="none" stroke="#d9c37e" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+  <!-- scale hint -->
+  <g fill="none" stroke="#2e2a1e" stroke-width="0.9" opacity="0.3">
+    <path d="M112 62 q6 8 0 16 M112 78 q6 8 0 16 M112 94 q6 8 0 16 M112 110 q6 8 0 16"/>
+    <path d="M130 56 q6 8 0 16 M130 72 q6 8 0 16 M130 88 q6 8 0 16 M130 104 q6 8 0 16 M130 120 q5 7 0 14"/>
+    <path d="M148 54 q6 8 0 16 M148 70 q6 8 0 16 M148 86 q6 8 0 16 M148 102 q6 8 0 16 M148 118 q5 7 0 14"/>
+    <path d="M166 56 q6 8 0 16 M166 72 q6 8 0 16 M166 88 q6 8 0 16 M166 104 q6 8 0 16"/>
+    <path d="M184 62 q6 8 0 16 M184 78 q6 8 0 16 M184 94 q6 8 0 16 M184 110 q5 7 0 14"/>
+    <path d="M202 70 q5 7 0 14 M202 84 q5 7 0 14 M202 98 q5 7 0 14"/>
+    <path d="M218 80 q5 6 0 12 M218 92 q5 6 0 12"/>
+  </g>
+  <!-- underslung protrusible mouth -->
+  <path d="M46 100 C52 98 58 97 64 98 M48 106 C54 108 60 109 66 109" fill="none" stroke="#2e2a1e" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- eye -->
+  <circle cx="68" cy="88" r="6" fill="#ddd2a8"/>
+  <circle cx="68" cy="88" r="3" fill="#1d1a10"/>
+  <circle cx="69.2" cy="86.8" r="1" fill="#ffffff"/>
+</svg>

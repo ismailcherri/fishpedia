@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Äsche">
+  <defs>
+    <linearGradient id="aeb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4e5560"/>
+      <stop offset="0.45" stop-color="#a0a8b4"/>
+      <stop offset="0.72" stop-color="#e4e6e8"/>
+      <stop offset="1" stop-color="#fafafa"/>
+    </linearGradient>
+    <linearGradient id="aef" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7a5f7c"/>
+      <stop offset="0.5" stop-color="#a4718f"/>
+      <stop offset="1" stop-color="#5d6f96"/>
+    </linearGradient>
+  </defs>
+  <!-- tail: forked -->
+  <path d="M252 100 L288 78 L280 98 L290 100 L280 102 L288 122 Z" fill="#6a7280" stroke="#3e4550" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: slender, elegant -->
+  <path d="M28 102 C40 88 66 78 102 74 C146 69 190 74 218 84 C234 90 242 96 244 100 C242 106 234 111 220 115 C192 124 148 129 106 126 C68 123 42 114 28 102 Z" fill="url(#aeb)" stroke="#3e4550" stroke-width="2.5"/>
+  <!-- HUGE banner dorsal fin (key marker) with iridescent bands -->
+  <path d="M118 74 C120 52 128 34 142 28 C158 24 174 30 184 44 C188 52 190 62 190 72 C168 64 140 66 122 76 Z" fill="url(#aef)" opacity="0.9" stroke="#3e4550" stroke-width="2" stroke-linejoin="round"/>
+  <g stroke="#3e4550" stroke-width="1.2" opacity="0.7">
+    <path d="M128 40 C132 52 133 64 132 74"/>
+    <path d="M142 30 C146 44 148 58 147 70"/>
+    <path d="M156 28 C161 42 163 56 162 68"/>
+    <path d="M170 33 C175 45 177 57 176 68"/>
+  </g>
+  <g fill="#5a3b56">
+    <circle cx="136" cy="48" r="2"/><circle cx="150" cy="42" r="2"/><circle cx="164" cy="44" r="2"/><circle cx="144" cy="60" r="2"/><circle cx="158" cy="56" r="2"/><circle cx="171" cy="54" r="1.8"/>
+  </g>
+  <!-- adipose fin -->
+  <path d="M212 82 C217 77 224 77 228 80 C225 84 224 87 224 90 L214 87 Z" fill="#6a7280" stroke="#3e4550" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- anal fin -->
+  <path d="M196 120 C200 130 210 135 219 132 C215 126 213 120 212 114 Z" fill="#6a7280" stroke="#3e4550" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic -->
+  <path d="M138 124 C142 134 152 139 161 137 C157 130 155 124 154 119 Z" fill="#7c8492" stroke="#3e4550" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral -->
+  <path d="M90 108 C96 117 107 121 115 119 C111 112 109 107 108 102 Z" fill="#7c8492" stroke="#3e4550" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- longitudinal stripes along lower flank -->
+  <g stroke="#3e4550" stroke-width="1.2" opacity="0.4" fill="none">
+    <path d="M96 108 C150 114 200 112 232 104"/>
+    <path d="M100 114 C150 120 198 118 228 110"/>
+  </g>
+  <!-- scattered small dark spots on front flank -->
+  <g fill="#2c333c" opacity="0.8">
+    <circle cx="96" cy="88" r="1.8"/><circle cx="108" cy="94" r="1.8"/><circle cx="88" cy="98" r="1.6"/><circle cx="102" cy="104" r="1.6"/>
+  </g>
+  <!-- gill cover -->
+  <path d="M82 80 C91 90 91 110 83 120" fill="none" stroke="#3e4550" stroke-width="2" stroke-linecap="round"/>
+  <!-- small mouth -->
+  <path d="M28 102 C36 99 44 97 52 97" fill="none" stroke="#3e4550" stroke-width="2" stroke-linecap="round"/>
+  <!-- large eye with pear-shaped pupil -->
+  <circle cx="58" cy="90" r="7" fill="#e4e0cc"/>
+  <path d="M58 87 C60 87 61.5 88.5 61.5 90.5 C61.5 92.5 60 94 58 94 C55.5 94 54 92.5 54.5 90 C55 88 56.5 87 58 87 Z" fill="#1e2126"/>
+  <circle cx="60" cy="88" r="1.2" fill="#ffffff"/>
+</svg>

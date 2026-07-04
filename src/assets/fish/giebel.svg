@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Giebel">
+  <defs>
+    <linearGradient id="gbb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4b5258"/>
+      <stop offset="0.5" stop-color="#93a0a4"/>
+      <stop offset="0.78" stop-color="#dde3e2"/>
+      <stop offset="1" stop-color="#f7f9f8"/>
+    </linearGradient>
+  </defs>
+  <!-- tail: forked -->
+  <path d="M250 102 L284 82 L277 100 L286 102 L277 104 L284 122 Z" fill="#68727a" stroke="#3d4449" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: deep, silver-grey -->
+  <path d="M46 102 C56 78 82 60 116 56 C152 52 186 64 206 82 C220 92 228 98 230 102 C228 108 220 116 208 122 C186 137 152 145 118 141 C84 137 58 124 46 102 Z" fill="url(#gbb)" stroke="#3d4449" stroke-width="2.5"/>
+  <!-- dorsal fin: long, slightly concave with serrated spine -->
+  <path d="M124 60 L132 36 L144 34 C152 36 162 40 172 46 C180 51 186 57 190 62 C185 68 182 73 180 78 L130 64 Z" fill="#79848a" opacity="0.92" stroke="#3d4449" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M132 37 L129 62 M144 35 l-4 27" stroke="#3d4449" stroke-width="1.8" opacity="0.8"/>
+  <g stroke="#3d4449" stroke-width="1.1" opacity="0.65">
+    <path d="M156 39 L150 66"/><path d="M168 44 L161 69"/><path d="M180 51 L172 73"/>
+  </g>
+  <!-- anal fin -->
+  <path d="M182 132 C186 143 197 149 208 146 C204 138 202 131 201 124 Z" fill="#79848a" stroke="#3d4449" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic -->
+  <path d="M128 136 C132 146 142 151 151 149 C147 142 145 136 144 130 Z" fill="#87929a" stroke="#3d4449" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral -->
+  <path d="M92 112 C98 122 109 126 117 124 C113 117 111 112 110 107 Z" fill="#87929a" stroke="#3d4449" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- scale pattern -->
+  <g fill="none" stroke="#3d4449" stroke-width="1.1" opacity="0.32">
+    <path d="M112 68 q6 8 0 16 M112 84 q6 8 0 16 M112 100 q6 8 0 16 M112 116 q5 7 0 14"/>
+    <path d="M130 62 q6 8 0 16 M130 78 q6 8 0 16 M130 94 q6 8 0 16 M130 110 q6 8 0 16"/>
+    <path d="M148 60 q6 8 0 16 M148 76 q6 8 0 16 M148 92 q6 8 0 16 M148 108 q6 8 0 16"/>
+    <path d="M166 62 q6 8 0 16 M166 78 q6 8 0 16 M166 94 q6 8 0 16 M166 110 q5 7 0 14"/>
+    <path d="M184 68 q6 8 0 16 M184 84 q6 8 0 16 M184 100 q6 8 0 16"/>
+    <path d="M202 76 q5 7 0 14 M202 90 q5 7 0 14 M202 104 q4 6 0 12"/>
+    <path d="M216 84 q4 6 0 12 M216 96 q4 6 0 12"/>
+  </g>
+  <!-- silver sheen -->
+  <path d="M84 74 C130 58 174 62 202 82" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <!-- gill cover -->
+  <path d="M88 74 C97 88 97 114 89 128" fill="none" stroke="#3d4449" stroke-width="2" stroke-linecap="round"/>
+  <!-- small mouth, no barbels -->
+  <path d="M46 102 C52 99 58 97 64 97" fill="none" stroke="#3d4449" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- eye -->
+  <circle cx="68" cy="90" r="6" fill="#e4e2d2"/>
+  <circle cx="68" cy="90" r="3" fill="#1c1e1c"/>
+  <circle cx="69.2" cy="88.8" r="1" fill="#ffffff"/>
+</svg>

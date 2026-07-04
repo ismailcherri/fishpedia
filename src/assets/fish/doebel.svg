@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Döbel">
+  <defs>
+    <linearGradient id="dbb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4b4f3c"/>
+      <stop offset="0.45" stop-color="#989970"/>
+      <stop offset="0.72" stop-color="#e0ddc0"/>
+      <stop offset="1" stop-color="#f8f6e8"/>
+    </linearGradient>
+  </defs>
+  <!-- tail: dark edge -->
+  <path d="M254 100 L288 80 L281 98 L290 100 L281 102 L288 120 Z" fill="#565a44" stroke="#33362a" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: cylindrical, broad head -->
+  <path d="M24 100 C36 84 62 72 98 68 C144 63 190 68 220 80 C236 86 246 94 248 100 C246 106 238 112 224 117 C194 128 148 133 102 129 C64 126 38 116 24 100 Z" fill="url(#dbb)" stroke="#33362a" stroke-width="2.5"/>
+  <!-- broad head: gill far back -->
+  <path d="M92 74 C102 84 102 112 93 124" fill="none" stroke="#33362a" stroke-width="2" stroke-linecap="round"/>
+  <!-- dorsal fin -->
+  <path d="M152 68 L161 44 L176 47 C171 56 168 65 167 75 Z" fill="#6a6e50" stroke="#33362a" stroke-width="2" stroke-linejoin="round"/>
+  <!-- anal fin: convex, rounded, orange-red -->
+  <path d="M196 122 C198 134 208 141 220 140 C226 132 228 124 227 116 C218 124 206 126 200 120 Z" fill="#c07248" stroke="#5e3a1c" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic: orange -->
+  <path d="M140 128 C144 139 154 144 163 142 C159 135 157 129 156 123 Z" fill="#c07248" stroke="#5e3a1c" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral -->
+  <path d="M96 108 C102 118 113 122 121 120 C117 113 115 108 114 103 Z" fill="#84876a" stroke="#33362a" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- large dark-edged scales: net pattern -->
+  <g fill="none" stroke="#33362a" stroke-width="1.3" opacity="0.42">
+    <path d="M112 74 q7 9 0 18 M112 92 q7 9 0 18 M112 110 q6 8 0 16"/>
+    <path d="M130 70 q7 9 0 18 M130 88 q7 9 0 18 M130 106 q7 9 0 18"/>
+    <path d="M148 70 q7 9 0 18 M148 88 q7 9 0 18 M148 106 q7 9 0 18"/>
+    <path d="M166 70 q7 9 0 18 M166 88 q7 9 0 18 M166 106 q6 8 0 16"/>
+    <path d="M184 72 q7 9 0 18 M184 90 q7 9 0 18"/>
+    <path d="M202 76 q6 8 0 16 M202 92 q6 8 0 16"/>
+    <path d="M220 82 q5 7 0 14 M220 96 q5 7 0 14"/>
+    <path d="M236 88 q4 6 0 12"/>
+  </g>
+  <!-- big terminal whitish mouth -->
+  <path d="M24 100 C34 92 48 87 62 86" fill="none" stroke="#33362a" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M24 100 C32 104 42 107 52 108" fill="none" stroke="#f2efdd" stroke-width="2.6" stroke-linecap="round" opacity="0.85"/>
+  <!-- eye -->
+  <circle cx="62" cy="90" r="6.5" fill="#e5d9a8"/>
+  <circle cx="62" cy="90" r="3.2" fill="#211e10"/>
+  <circle cx="63.4" cy="88.6" r="1.1" fill="#ffffff"/>
+</svg>

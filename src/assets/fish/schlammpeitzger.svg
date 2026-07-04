@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Schlammpeitzger">
+  <defs>
+    <linearGradient id="spb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6b5a38"/>
+      <stop offset="0.5" stop-color="#a08a56"/>
+      <stop offset="0.8" stop-color="#d9c692"/>
+      <stop offset="1" stop-color="#efe3c2"/>
+    </linearGradient>
+  </defs>
+  <!-- tail: rounded -->
+  <path d="M272 100 C282 92 291 90 298 92 C295 98 295 105 298 110 C291 112 282 109 272 104 Z" fill="#8a7647" stroke="#4c3f22" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: elongated cylinder -->
+  <path d="M18 100 C28 92 48 87 74 86 C128 83 200 85 246 90 C262 93 270 96 272 99 C270 103 262 106 248 108 C202 113 130 114 78 112 C50 110 28 107 18 100 Z" fill="url(#spb)" stroke="#4c3f22" stroke-width="2.5"/>
+  <!-- small rounded dorsal fin -->
+  <path d="M172 86 C177 74 188 70 198 74 C194 80 192 86 191 92 Z" fill="#8a7647" stroke="#4c3f22" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- small rounded anal fin -->
+  <path d="M208 110 C211 118 219 122 227 120 C223 114 221 109 220 104 Z" fill="#8a7647" stroke="#4c3f22" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pelvic -->
+  <path d="M152 112 C154 119 161 123 168 121 C165 116 163 112 162 108 Z" fill="#988351" stroke="#4c3f22" stroke-width="1.6" stroke-linejoin="round"/>
+  <!-- pectoral: rounded -->
+  <path d="M74 108 C78 116 87 120 95 118 C91 112 89 107 88 103 Z" fill="#988351" stroke="#4c3f22" stroke-width="1.6" stroke-linejoin="round"/>
+  <!-- dark longitudinal bands (key marker) -->
+  <path d="M76 92 C140 88 210 89 250 93 C210 91 140 90 78 94 Z" fill="#453718" opacity="0.85" stroke="#453718" stroke-width="2.5"/>
+  <path d="M72 100 C140 97 214 98 256 100 C214 102 140 103 72 102 Z" fill="#453718" opacity="0.85" stroke="#453718" stroke-width="3"/>
+  <path d="M80 108 C144 106 210 106 246 106 C210 109 144 110 82 110 Z" fill="#453718" opacity="0.7" stroke="#453718" stroke-width="2"/>
+  <!-- ten barbels around downturned mouth -->
+  <path d="M20 104 C19 110 16 114 11 117 M26 105 C25 111 23 115 19 118 M33 106 C32 111 30 115 27 118 M40 106 C40 112 38 116 35 119 M47 107 C47 112 46 116 43 118" fill="none" stroke="#4c3f22" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M24 96 C22 92 19 89 15 88 M32 95 C31 91 29 88 26 86 M40 95 C40 91 38 88 36 86" fill="none" stroke="#4c3f22" stroke-width="1.7" stroke-linecap="round"/>
+  <!-- small eye high on head -->
+  <circle cx="50" cy="93" r="3.8" fill="#dcCFa2"/>
+  <circle cx="50" cy="93" r="2" fill="#221b0c"/>
+  <circle cx="50.9" cy="92.1" r="0.7" fill="#ffffff"/>
+</svg>

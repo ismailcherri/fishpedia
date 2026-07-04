@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Rotfeder">
+  <defs>
+    <linearGradient id="rfb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a5638"/>
+      <stop offset="0.45" stop-color="#9aa06a"/>
+      <stop offset="0.75" stop-color="#e2e2b8"/>
+      <stop offset="1" stop-color="#f9f8ea"/>
+    </linearGradient>
+  </defs>
+  <!-- tail: blood red -->
+  <path d="M250 100 L284 80 L277 98 L286 100 L277 102 L284 120 Z" fill="#c13d24" stroke="#6e2413" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: deeper than roach -->
+  <path d="M40 102 C52 82 76 66 110 62 C150 57 190 66 216 80 C232 88 242 96 244 100 C242 106 234 112 220 118 C192 131 148 137 112 132 C80 128 54 118 40 102 Z" fill="url(#rfb)" stroke="#39422a" stroke-width="2.5"/>
+  <!-- dorsal fin set back, behind pelvics, reddish -->
+  <path d="M156 66 L166 42 L182 46 C177 55 174 64 173 74 Z" fill="#c1502e" stroke="#6e2413" stroke-width="2" stroke-linejoin="round"/>
+  <!-- anal fin: blood red -->
+  <path d="M194 124 C199 136 211 141 221 138 C217 130 215 123 214 117 Z" fill="#c13d24" stroke="#6e2413" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic: blood red, in front of dorsal -->
+  <path d="M136 130 C140 141 150 146 159 144 C155 137 153 131 152 125 Z" fill="#c13d24" stroke="#6e2413" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral: reddish -->
+  <path d="M92 108 C98 118 109 122 117 120 C113 113 111 108 110 103 Z" fill="#c1502e" stroke="#6e2413" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- golden sheen -->
+  <path d="M76 82 C130 66 190 70 228 84" fill="none" stroke="#f0dc8e" stroke-width="4.5" stroke-linecap="round" opacity="0.45"/>
+  <!-- scale hint -->
+  <g fill="none" stroke="#39422a" stroke-width="0.9" opacity="0.3">
+    <path d="M116 72 q6 7 0 14 M116 86 q6 7 0 14 M116 100 q6 7 0 14"/>
+    <path d="M134 68 q6 7 0 14 M134 82 q6 7 0 14 M134 96 q6 7 0 14 M134 110 q5 6 0 12"/>
+    <path d="M152 68 q6 7 0 14 M152 82 q6 7 0 14 M152 96 q6 7 0 14"/>
+    <path d="M170 70 q6 7 0 14 M170 84 q6 7 0 14 M170 98 q6 7 0 14"/>
+    <path d="M188 74 q6 7 0 14 M188 88 q6 7 0 14 M188 102 q5 6 0 12"/>
+    <path d="M206 78 q5 6 0 12 M206 90 q5 6 0 12 M206 102 q5 6 0 12"/>
+  </g>
+  <!-- keeled belly hint -->
+  <path d="M150 133 C168 136 186 135 200 131" fill="none" stroke="#39422a" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/>
+  <!-- gill cover -->
+  <path d="M88 78 C97 90 97 110 89 120" fill="none" stroke="#39422a" stroke-width="2" stroke-linecap="round"/>
+  <!-- upturned mouth -->
+  <path d="M40 102 C46 96 54 92 62 90 M38 98 C44 102 52 105 60 106" fill="none" stroke="#39422a" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- golden-yellow eye -->
+  <circle cx="66" cy="86" r="6" fill="#e5b93f"/>
+  <circle cx="66" cy="86" r="3" fill="#1f1808"/>
+  <circle cx="67.2" cy="84.8" r="1" fill="#ffffff"/>
+</svg>

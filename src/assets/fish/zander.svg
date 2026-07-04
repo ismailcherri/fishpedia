@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Zander">
+  <defs>
+    <linearGradient id="zb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a5a52"/>
+      <stop offset="0.55" stop-color="#8ba08f"/>
+      <stop offset="0.8" stop-color="#d3dcc9"/>
+      <stop offset="1" stop-color="#f0f3ea"/>
+    </linearGradient>
+  </defs>
+  <!-- tail -->
+  <path d="M272 100 L304 80 L297 98 L306 100 L297 102 L304 120 Z" fill="#5d7263" stroke="#3a473e" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: spindle -->
+  <path d="M20 102 C36 84 64 72 104 68 C160 63 216 72 252 84 C266 89 274 95 276 100 C274 105 266 111 252 116 C216 128 160 137 104 132 C64 128 36 118 20 102 Z" fill="url(#zb)" stroke="#3a473e" stroke-width="2.5"/>
+  <!-- first dorsal: spiny with rays and dots -->
+  <path d="M104 70 L112 40 L124 38 L136 38 L148 40 L160 44 L168 50 L170 62 L166 68 Z" fill="#93a894" opacity="0.9" stroke="#3a473e" stroke-width="2" stroke-linejoin="round"/>
+  <g stroke="#3a473e" stroke-width="1.4" opacity="0.8">
+    <path d="M112 41 L110 68"/><path d="M124 38.5 L120 68"/><path d="M136 38.5 L131 67"/><path d="M148 41 L142 66"/><path d="M160 45 L153 64"/>
+  </g>
+  <g fill="#2c3630">
+    <circle cx="119" cy="52" r="1.7"/><circle cx="131" cy="49" r="1.7"/><circle cx="143" cy="50" r="1.7"/><circle cx="127" cy="60" r="1.7"/><circle cx="140" cy="59" r="1.7"/><circle cx="153" cy="55" r="1.7"/>
+  </g>
+  <!-- second dorsal: soft -->
+  <path d="M180 62 C192 50 214 48 230 54 C226 62 224 70 223 76 L182 68 Z" fill="#93a894" opacity="0.9" stroke="#3a473e" stroke-width="2" stroke-linejoin="round"/>
+  <!-- anal fin -->
+  <path d="M206 122 C212 134 226 139 236 136 C232 128 230 121 229 115 Z" fill="#7b9080" stroke="#3a473e" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic -->
+  <path d="M126 128 C130 139 141 144 150 142 C146 135 144 129 143 124 Z" fill="#7b9080" stroke="#3a473e" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral -->
+  <path d="M92 110 C98 120 109 124 117 122 C113 115 111 110 110 105 Z" fill="#7b9080" stroke="#3a473e" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- dark vertical bands -->
+  <g fill="#46554b" opacity="0.55">
+    <path d="M112 72 C118 88 118 108 113 126 L104 124 C108 108 108 88 104 72 Z"/>
+    <path d="M140 68 C146 86 146 110 141 130 L132 128 C136 110 136 86 132 68 Z"/>
+    <path d="M168 68 C174 86 174 108 169 128 L160 127 C164 108 164 86 160 68 Z"/>
+    <path d="M196 72 C201 88 201 106 197 122 L188 121 C192 106 192 88 188 72 Z"/>
+    <path d="M222 78 C226 90 226 104 223 116 L215 114 C218 103 218 90 215 78 Z"/>
+  </g>
+  <!-- gill cover -->
+  <path d="M86 78 C96 88 96 112 87 124" fill="none" stroke="#3a473e" stroke-width="2" stroke-linecap="round"/>
+  <!-- mouth with fangs -->
+  <path d="M20 102 C32 96 46 93 58 93" fill="none" stroke="#3a473e" stroke-width="2" stroke-linecap="round"/>
+  <path d="M30 100 l2.5 6 M40 97.5 l2.5 6" stroke="#f4f6ee" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- glassy eye -->
+  <circle cx="58" cy="84" r="8" fill="#cfd8db"/>
+  <circle cx="58" cy="84" r="4.5" fill="#5d6a70"/>
+  <circle cx="58" cy="84" r="2.2" fill="#20282b"/>
+  <circle cx="60" cy="82" r="1.4" fill="#ffffff" opacity="0.9"/>
+</svg>

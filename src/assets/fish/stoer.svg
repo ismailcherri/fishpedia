@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Stör">
+  <defs>
+    <linearGradient id="stb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a5158"/>
+      <stop offset="0.55" stop-color="#7d868c"/>
+      <stop offset="0.8" stop-color="#cfd4d2"/>
+      <stop offset="1" stop-color="#f0f2f0"/>
+    </linearGradient>
+  </defs>
+  <!-- heterocercal shark-like tail: long upper lobe -->
+  <path d="M258 98 C272 86 288 74 302 70 C296 82 292 92 292 100 C288 110 280 118 270 120 C268 112 264 104 258 102 Z" fill="#5d666d" stroke="#343b41" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: elongated with pointed snout -->
+  <path d="M12 98 C22 90 44 84 74 82 C130 78 196 80 240 88 C254 91 262 95 264 99 C262 104 254 108 242 110 C200 118 132 120 80 114 C46 110 22 106 12 98 Z" fill="url(#stb)" stroke="#343b41" stroke-width="2.5"/>
+  <!-- dorsal fin: far back -->
+  <path d="M222 86 L232 66 L246 70 C241 78 238 84 237 90 Z" fill="#5d666d" stroke="#343b41" stroke-width="2" stroke-linejoin="round"/>
+  <!-- anal fin -->
+  <path d="M226 112 C230 122 239 127 248 124 C244 118 242 112 241 107 Z" fill="#5d666d" stroke="#343b41" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic -->
+  <path d="M180 116 C184 125 193 130 201 128 C197 121 195 116 194 111 Z" fill="#6e777e" stroke="#343b41" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral: broad, low -->
+  <path d="M84 110 C90 120 102 124 112 121 C107 114 105 108 104 103 Z" fill="#6e777e" stroke="#343b41" stroke-width="2" stroke-linejoin="round"/>
+  <!-- dorsal row of bony scutes -->
+  <g fill="#c9ced1" stroke="#343b41" stroke-width="1.4" stroke-linejoin="round">
+    <path d="M96 82 l6 -7 6 7 z"/>
+    <path d="M118 80 l6 -7 6 7 z"/>
+    <path d="M140 79 l6 -7 6 7 z"/>
+    <path d="M162 79 l6 -7 6 7 z"/>
+    <path d="M184 80 l6 -7 6 7 z"/>
+    <path d="M206 82 l6 -7 6 7 z"/>
+    <path d="M228 84 l5 -6 5 6 z"/>
+  </g>
+  <!-- lateral row of scutes -->
+  <g fill="#b8bfc2" stroke="#343b41" stroke-width="1.2" stroke-linejoin="round">
+    <path d="M100 96 l5 -4 5 4 -5 4 z"/>
+    <path d="M124 97 l5 -4 5 4 -5 4 z"/>
+    <path d="M148 97 l5 -4 5 4 -5 4 z"/>
+    <path d="M172 97 l5 -4 5 4 -5 4 z"/>
+    <path d="M196 98 l5 -4 5 4 -5 4 z"/>
+    <path d="M218 99 l4 -3.5 4 3.5 -4 3.5 z"/>
+  </g>
+  <!-- pointed snout with 4 barbels in front of mouth -->
+  <path d="M12 98 C20 96 30 95 40 95" fill="none" stroke="#343b41" stroke-width="2" stroke-linecap="round"/>
+  <path d="M30 100 C29 106 27 111 23 114 M37 101 C36 107 34 111 31 114 M44 101 C44 107 42 111 39 114 M51 102 C51 107 50 111 47 114" fill="none" stroke="#343b41" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- protrusible ventral mouth -->
+  <path d="M56 108 C62 111 68 112 74 112" fill="none" stroke="#343b41" stroke-width="2.4" stroke-linecap="round"/>
+  <!-- small eye -->
+  <circle cx="52" cy="92" r="4.5" fill="#d4d6cf"/>
+  <circle cx="52" cy="92" r="2.3" fill="#1b1f22"/>
+  <circle cx="53" cy="91" r="0.8" fill="#ffffff"/>
+</svg>

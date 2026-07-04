@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Karausche">
+  <defs>
+    <linearGradient id="kab" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6a5a24"/>
+      <stop offset="0.5" stop-color="#a68e42"/>
+      <stop offset="0.78" stop-color="#dfcf93"/>
+      <stop offset="1" stop-color="#f3ecd2"/>
+    </linearGradient>
+  </defs>
+  <!-- tail: slightly notched -->
+  <path d="M250 102 C264 92 276 88 286 90 C282 97 282 107 286 114 C276 116 264 112 250 104 Z" fill="#87702e" stroke="#4e4118" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: very deep, golden -->
+  <path d="M46 102 C56 78 82 58 116 54 C152 50 188 62 208 80 C222 92 230 98 232 102 C230 108 222 116 210 124 C188 140 152 148 118 144 C84 140 58 126 46 102 Z" fill="url(#kab)" stroke="#4e4118" stroke-width="2.5"/>
+  <!-- dorsal fin: long with convex edge -->
+  <path d="M122 58 C132 40 152 34 172 40 C182 44 190 50 196 58 C190 64 186 70 184 76 L128 62 Z" fill="#8a742f" opacity="0.92" stroke="#4e4118" stroke-width="2" stroke-linejoin="round"/>
+  <g stroke="#4e4118" stroke-width="1.2" opacity="0.7">
+    <path d="M134 46 L131 61"/><path d="M148 41 L143 63"/><path d="M162 40 L156 66"/><path d="M176 45 L169 69"/><path d="M188 53 L180 72"/>
+  </g>
+  <!-- anal fin -->
+  <path d="M184 134 C188 145 199 151 210 148 C206 140 204 133 203 126 Z" fill="#8a742f" stroke="#4e4118" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic -->
+  <path d="M130 138 C134 148 144 153 153 151 C149 144 147 138 146 132 Z" fill="#97803a" stroke="#4e4118" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral -->
+  <path d="M92 112 C98 122 109 126 117 124 C113 117 111 112 110 107 Z" fill="#97803a" stroke="#4e4118" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- scale pattern -->
+  <g fill="none" stroke="#4e4118" stroke-width="1.1" opacity="0.35">
+    <path d="M112 66 q6 8 0 16 M112 82 q6 8 0 16 M112 98 q6 8 0 16 M112 114 q6 8 0 16"/>
+    <path d="M130 60 q6 8 0 16 M130 76 q6 8 0 16 M130 92 q6 8 0 16 M130 108 q6 8 0 16 M130 124 q5 7 0 14"/>
+    <path d="M148 58 q6 8 0 16 M148 74 q6 8 0 16 M148 90 q6 8 0 16 M148 106 q6 8 0 16 M148 122 q5 7 0 14"/>
+    <path d="M166 60 q6 8 0 16 M166 76 q6 8 0 16 M166 92 q6 8 0 16 M166 108 q6 8 0 16"/>
+    <path d="M184 66 q6 8 0 16 M184 82 q6 8 0 16 M184 98 q6 8 0 16 M184 114 q5 7 0 14"/>
+    <path d="M202 76 q5 7 0 14 M202 90 q5 7 0 14 M202 104 q5 7 0 14"/>
+    <path d="M218 86 q4 6 0 12 M218 98 q4 6 0 12"/>
+  </g>
+  <!-- golden sheen -->
+  <path d="M84 74 C130 56 178 60 206 80" fill="none" stroke="#f2df9a" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
+  <!-- dark blotch on tail wrist (juvenile marker) -->
+  <circle cx="242" cy="100" r="5" fill="#3c3212" opacity="0.65"/>
+  <!-- gill cover -->
+  <path d="M88 72 C97 86 97 116 89 130" fill="none" stroke="#4e4118" stroke-width="2" stroke-linecap="round"/>
+  <!-- small mouth, no barbels -->
+  <path d="M46 102 C52 99 58 97 64 97" fill="none" stroke="#4e4118" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- eye -->
+  <circle cx="68" cy="90" r="6" fill="#e8d9a2"/>
+  <circle cx="68" cy="90" r="3" fill="#221b0b"/>
+  <circle cx="69.2" cy="88.8" r="1" fill="#ffffff"/>
+</svg>

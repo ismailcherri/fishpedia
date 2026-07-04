@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Barbe">
+  <defs>
+    <linearGradient id="bab" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5c4d28"/>
+      <stop offset="0.5" stop-color="#96803f"/>
+      <stop offset="0.78" stop-color="#dcc98c"/>
+      <stop offset="1" stop-color="#f2ecd2"/>
+    </linearGradient>
+  </defs>
+  <!-- tail: forked, lower lobe reddish -->
+  <path d="M262 98 L298 76 L290 96 L300 98 L292 102 L300 122 Z" fill="#a3542e" stroke="#5e3a1c" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: arched back, flat belly -->
+  <path d="M20 108 C30 96 52 84 84 76 C130 64 190 64 232 76 C252 82 264 90 266 96 C264 102 256 108 242 112 C204 122 140 124 92 120 C56 117 30 116 20 108 Z" fill="url(#bab)" stroke="#5e3a1c" stroke-width="2.5"/>
+  <!-- flat belly line emphasis -->
+  <path d="M56 116 C120 121 200 121 244 112" fill="none" stroke="#5e3a1c" stroke-width="1.5" opacity="0.5"/>
+  <!-- dorsal fin -->
+  <path d="M148 68 L156 42 L170 44 C166 54 163 62 162 72 Z" fill="#7d6330" stroke="#5e3a1c" stroke-width="2" stroke-linejoin="round"/>
+  <!-- anal fin: reddish -->
+  <path d="M204 118 C209 130 221 135 230 132 C226 124 224 118 223 112 Z" fill="#b35c31" stroke="#5e3a1c" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic: reddish -->
+  <path d="M146 120 C150 131 160 136 169 134 C165 127 163 121 162 116 Z" fill="#b35c31" stroke="#5e3a1c" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral: reddish, low set -->
+  <path d="M84 114 C90 124 101 128 110 126 C106 119 104 113 103 108 Z" fill="#b35c31" stroke="#5e3a1c" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- bronze sheen -->
+  <path d="M72 88 C130 74 200 74 240 86" fill="none" stroke="#e8d391" stroke-width="4" stroke-linecap="round" opacity="0.4"/>
+  <!-- gill cover -->
+  <path d="M82 84 C90 94 90 110 83 118" fill="none" stroke="#5e3a1c" stroke-width="2" stroke-linecap="round"/>
+  <!-- pointed snout, underslung mouth -->
+  <path d="M20 108 C28 108 36 109 44 111" fill="none" stroke="#5e3a1c" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- four barbels -->
+  <path d="M26 110 C24 118 20 124 14 128" fill="none" stroke="#5e3a1c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M34 112 C33 119 30 125 25 129" fill="none" stroke="#5e3a1c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M44 112 C44 120 41 127 36 132" fill="none" stroke="#5e3a1c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M52 113 C53 120 51 126 47 130" fill="none" stroke="#5e3a1c" stroke-width="2" stroke-linecap="round"/>
+  <!-- eye: high on head -->
+  <circle cx="56" cy="92" r="5.5" fill="#e6d6a2"/>
+  <circle cx="56" cy="92" r="2.8" fill="#241c0d"/>
+  <circle cx="57" cy="91" r="1" fill="#ffffff"/>
+</svg>

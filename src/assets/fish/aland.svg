@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Aland">
+  <defs>
+    <linearGradient id="alb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3f4a4e"/>
+      <stop offset="0.45" stop-color="#8fa0a0"/>
+      <stop offset="0.72" stop-color="#dfe4dd"/>
+      <stop offset="1" stop-color="#f9faf7"/>
+    </linearGradient>
+  </defs>
+  <!-- tail -->
+  <path d="M252 100 L286 80 L279 98 L288 100 L279 102 L286 120 Z" fill="#5f6d6e" stroke="#39434a" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: moderately deep -->
+  <path d="M38 102 C50 82 76 66 110 62 C148 57 188 66 214 80 C230 88 240 96 242 100 C240 106 232 112 218 118 C190 131 148 137 112 132 C80 128 52 118 38 102 Z" fill="url(#alb)" stroke="#39434a" stroke-width="2.5"/>
+  <!-- small head emphasis -->
+  <path d="M84 76 C93 88 93 112 85 122" fill="none" stroke="#39434a" stroke-width="2" stroke-linecap="round"/>
+  <!-- dorsal fin -->
+  <path d="M148 66 L157 42 L172 45 C167 54 164 63 163 73 Z" fill="#5f6d6e" stroke="#39434a" stroke-width="2" stroke-linejoin="round"/>
+  <!-- anal fin: concave edge, reddish -->
+  <path d="M192 124 C195 134 202 140 212 140 C216 134 219 127 220 120 C212 126 202 128 195 122 Z" fill="#b56a52" stroke="#5c3227" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic: reddish -->
+  <path d="M138 130 C142 141 152 146 161 144 C157 137 155 131 154 125 Z" fill="#b56a52" stroke="#5c3227" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral -->
+  <path d="M90 108 C96 118 107 122 115 120 C111 113 109 108 108 103 Z" fill="#7c8a8a" stroke="#39434a" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- fine dense scales: smaller pattern than chub -->
+  <g fill="none" stroke="#39434a" stroke-width="0.8" opacity="0.28">
+    <path d="M104 76 q4 5 0 10 M104 86 q4 5 0 10 M104 96 q4 5 0 10 M104 106 q4 5 0 10"/>
+    <path d="M116 72 q4 5 0 10 M116 82 q4 5 0 10 M116 92 q4 5 0 10 M116 102 q4 5 0 10 M116 112 q4 5 0 10"/>
+    <path d="M128 68 q4 5 0 10 M128 78 q4 5 0 10 M128 88 q4 5 0 10 M128 98 q4 5 0 10 M128 108 q4 5 0 10 M128 118 q4 5 0 10"/>
+    <path d="M140 66 q4 5 0 10 M140 76 q4 5 0 10 M140 86 q4 5 0 10 M140 96 q4 5 0 10 M140 106 q4 5 0 10 M140 116 q4 5 0 10"/>
+    <path d="M152 66 q4 5 0 10 M152 76 q4 5 0 10 M152 86 q4 5 0 10 M152 96 q4 5 0 10 M152 106 q4 5 0 10 M152 116 q4 5 0 10"/>
+    <path d="M164 66 q4 5 0 10 M164 76 q4 5 0 10 M164 86 q4 5 0 10 M164 96 q4 5 0 10 M164 106 q4 5 0 10"/>
+    <path d="M176 68 q4 5 0 10 M176 78 q4 5 0 10 M176 88 q4 5 0 10 M176 98 q4 5 0 10 M176 108 q4 5 0 10"/>
+    <path d="M188 70 q4 5 0 10 M188 80 q4 5 0 10 M188 90 q4 5 0 10 M188 100 q4 5 0 10"/>
+    <path d="M200 74 q4 5 0 10 M200 84 q4 5 0 10 M200 94 q4 5 0 10 M200 104 q4 5 0 10"/>
+    <path d="M212 78 q4 5 0 10 M212 88 q4 5 0 10 M212 98 q4 5 0 10"/>
+    <path d="M224 84 q3 4 0 8 M224 92 q3 4 0 8 M224 100 q3 4 0 8"/>
+  </g>
+  <!-- brassy sheen -->
+  <path d="M78 82 C130 66 190 70 226 84" fill="none" stroke="#e3d191" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+  <!-- small mouth -->
+  <path d="M38 102 C45 98 52 96 59 96" fill="none" stroke="#39434a" stroke-width="2" stroke-linecap="round"/>
+  <!-- eye -->
+  <circle cx="62" cy="88" r="6" fill="#e2d8b0"/>
+  <circle cx="62" cy="88" r="3" fill="#1d1c12"/>
+  <circle cx="63.2" cy="86.8" r="1" fill="#ffffff"/>
+</svg>

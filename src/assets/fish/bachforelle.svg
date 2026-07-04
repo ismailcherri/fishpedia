@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Bachforelle">
+  <defs>
+    <linearGradient id="bfb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5c4f2c"/>
+      <stop offset="0.45" stop-color="#a3924e"/>
+      <stop offset="0.72" stop-color="#e3d8a4"/>
+      <stop offset="1" stop-color="#f6f0da"/>
+    </linearGradient>
+  </defs>
+  <!-- tail: broad, barely forked -->
+  <path d="M258 100 C272 88 284 84 294 86 C290 94 290 108 294 116 C284 118 272 112 258 102 Z" fill="#8a7a3e" stroke="#4a4020" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: stocky trout shape -->
+  <path d="M24 100 C36 84 62 72 98 68 C144 63 192 70 224 82 C240 88 250 95 252 100 C250 106 242 112 228 117 C198 128 152 133 106 129 C68 126 38 116 24 100 Z" fill="url(#bfb)" stroke="#4a4020" stroke-width="2.5"/>
+  <!-- dorsal fin -->
+  <path d="M132 68 L141 44 L158 47 C153 56 150 65 149 75 Z" fill="#8a7a3e" stroke="#4a4020" stroke-width="2" stroke-linejoin="round"/>
+  <!-- adipose fin (key salmonid marker) -->
+  <path d="M212 82 C218 76 226 76 230 80 C227 84 226 88 226 91 L214 88 Z" fill="#8a7a3e" stroke="#4a4020" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- anal fin -->
+  <path d="M196 122 C201 133 212 138 222 135 C218 128 216 121 215 115 Z" fill="#8a7a3e" stroke="#4a4020" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic -->
+  <path d="M140 127 C144 138 154 143 163 141 C159 134 157 128 156 122 Z" fill="#9c8c4a" stroke="#4a4020" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral -->
+  <path d="M90 108 C96 118 107 122 115 120 C111 113 109 108 108 103 Z" fill="#9c8c4a" stroke="#4a4020" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- black spots -->
+  <g fill="#33301c" opacity="0.85">
+    <circle cx="108" cy="82" r="2.6"/><circle cx="126" cy="76" r="2.4"/><circle cx="146" cy="82" r="2.6"/><circle cx="164" cy="76" r="2.4"/>
+    <circle cx="184" cy="82" r="2.6"/><circle cx="204" cy="86" r="2.4"/><circle cx="222" cy="90" r="2.2"/><circle cx="118" cy="94" r="2.2"/>
+    <circle cx="158" cy="94" r="2.2"/><circle cx="196" cy="96" r="2.2"/><circle cx="86" cy="86" r="2.2"/><circle cx="70" cy="82" r="2"/>
+  </g>
+  <!-- red spots with pale halos (key brown trout marker) -->
+  <g>
+    <circle cx="116" cy="106" r="3.8" fill="#f2e8c8"/><circle cx="116" cy="106" r="2.3" fill="#c23c22"/>
+    <circle cx="140" cy="102" r="3.8" fill="#f2e8c8"/><circle cx="140" cy="102" r="2.3" fill="#c23c22"/>
+    <circle cx="166" cy="106" r="3.8" fill="#f2e8c8"/><circle cx="166" cy="106" r="2.3" fill="#c23c22"/>
+    <circle cx="190" cy="104" r="3.8" fill="#f2e8c8"/><circle cx="190" cy="104" r="2.3" fill="#c23c22"/>
+    <circle cx="212" cy="102" r="3.4" fill="#f2e8c8"/><circle cx="212" cy="102" r="2" fill="#c23c22"/>
+    <circle cx="128" cy="116" r="3.4" fill="#f2e8c8"/><circle cx="128" cy="116" r="2" fill="#c23c22"/>
+    <circle cx="178" cy="116" r="3.4" fill="#f2e8c8"/><circle cx="178" cy="116" r="2" fill="#c23c22"/>
+  </g>
+  <!-- gill cover with spots -->
+  <path d="M84 76 C94 86 94 112 85 122" fill="none" stroke="#4a4020" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="76" cy="98" r="2" fill="#33301c" opacity="0.8"/>
+  <!-- large mouth reaching behind eye -->
+  <path d="M24 100 C36 94 50 90 64 89" fill="none" stroke="#4a4020" stroke-width="2.4" stroke-linecap="round"/>
+  <!-- eye -->
+  <circle cx="58" cy="86" r="6.5" fill="#e8d9a0"/>
+  <circle cx="58" cy="86" r="3.3" fill="#221d0d"/>
+  <circle cx="59.4" cy="84.6" r="1.1" fill="#ffffff"/>
+</svg>

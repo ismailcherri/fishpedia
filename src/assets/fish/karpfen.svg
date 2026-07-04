@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Karpfen">
+  <defs>
+    <linearGradient id="cb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6b5426"/>
+      <stop offset="0.5" stop-color="#a8863e"/>
+      <stop offset="0.78" stop-color="#e0c988"/>
+      <stop offset="1" stop-color="#f4ead0"/>
+    </linearGradient>
+  </defs>
+  <!-- tail -->
+  <path d="M254 102 L290 80 L283 100 L292 102 L283 104 L290 124 Z" fill="#8a6d31" stroke="#54401c" stroke-width="2" stroke-linejoin="round"/>
+  <!-- deep body -->
+  <path d="M34 106 C46 82 74 62 114 56 C158 50 202 60 232 78 C248 88 256 96 258 102 C256 108 248 116 234 122 C204 136 158 142 116 136 C78 130 48 124 34 106 Z" fill="url(#cb)" stroke="#54401c" stroke-width="2.5"/>
+  <!-- long dorsal fin with front spine -->
+  <path d="M118 58 L124 34 L134 32 C140 44 148 52 160 56 C180 58 200 64 214 72 C210 78 208 84 207 90 L124 62 Z" fill="#7d6330" opacity="0.92" stroke="#54401c" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M124 35 L122 60" stroke="#54401c" stroke-width="2.2"/>
+  <!-- anal fin -->
+  <path d="M198 128 C204 140 218 145 228 142 C224 134 222 127 221 121 Z" fill="#7d6330" stroke="#54401c" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic -->
+  <path d="M126 134 C130 145 141 150 150 148 C146 141 144 134 143 129 Z" fill="#96793a" stroke="#54401c" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral -->
+  <path d="M92 112 C98 122 109 126 117 124 C113 117 111 112 110 107 Z" fill="#96793a" stroke="#54401c" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- large scale pattern -->
+  <g fill="none" stroke="#54401c" stroke-width="1.2" opacity="0.45">
+    <path d="M104 70 q7 8 0 16 M104 86 q7 8 0 16 M104 102 q7 8 0 16"/>
+    <path d="M120 66 q7 8 0 16 M120 82 q7 8 0 16 M120 98 q7 8 0 16 M120 114 q6 7 0 14"/>
+    <path d="M136 62 q7 8 0 16 M136 78 q7 8 0 16 M136 94 q7 8 0 16 M136 110 q7 8 0 16"/>
+    <path d="M152 62 q7 8 0 16 M152 78 q7 8 0 16 M152 94 q7 8 0 16 M152 110 q7 8 0 16"/>
+    <path d="M168 64 q7 8 0 16 M168 80 q7 8 0 16 M168 96 q7 8 0 16 M168 112 q6 7 0 14"/>
+    <path d="M184 66 q7 8 0 16 M184 82 q7 8 0 16 M184 98 q7 8 0 16"/>
+    <path d="M200 70 q6 8 0 16 M200 86 q6 8 0 16 M200 102 q6 7 0 14"/>
+    <path d="M216 76 q6 7 0 14 M216 90 q6 7 0 14 M216 104 q5 6 0 12"/>
+    <path d="M232 84 q5 6 0 12 M232 96 q5 6 0 12"/>
+  </g>
+  <!-- gill cover -->
+  <path d="M88 78 C98 90 98 114 89 126" fill="none" stroke="#54401c" stroke-width="2" stroke-linecap="round"/>
+  <!-- protrusible mouth pointing slightly down -->
+  <path d="M34 106 C40 102 48 100 56 100 M36 112 C42 114 48 115 54 115" fill="none" stroke="#54401c" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- barbels: two short top lip, two long at corners -->
+  <path d="M44 100 C42 94 40 90 36 88" fill="none" stroke="#54401c" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M52 100 C51 95 49 91 46 89" fill="none" stroke="#54401c" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M50 112 C50 122 46 130 38 135" fill="none" stroke="#54401c" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M58 112 C59 121 56 128 50 133" fill="none" stroke="#54401c" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- eye -->
+  <circle cx="66" cy="92" r="6.5" fill="#e9d9a5"/>
+  <circle cx="66" cy="92" r="3.3" fill="#241c0d"/>
+  <circle cx="67.4" cy="90.6" r="1.1" fill="#ffffff"/>
+</svg>

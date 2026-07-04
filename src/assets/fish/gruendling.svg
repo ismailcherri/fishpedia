@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Gründling">
+  <defs>
+    <linearGradient id="grb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5a5644"/>
+      <stop offset="0.5" stop-color="#9b9273"/>
+      <stop offset="0.78" stop-color="#ddd4b4"/>
+      <stop offset="1" stop-color="#f4efde"/>
+    </linearGradient>
+  </defs>
+  <!-- tail: forked with speckles -->
+  <path d="M244 102 L276 84 L270 100 L278 102 L270 104 L276 120 Z" fill="#7d7458" stroke="#463f2d" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: stocky, rounded -->
+  <path d="M42 104 C54 92 78 82 108 78 C146 74 182 80 206 90 C220 96 228 100 230 104 C228 108 220 112 208 116 C184 124 148 128 112 126 C80 124 56 116 42 104 Z" fill="url(#grb)" stroke="#463f2d" stroke-width="2.5"/>
+  <!-- dorsal fin with dark speckle rows -->
+  <path d="M140 78 L148 56 L162 58 C158 66 155 72 154 80 Z" fill="#8d8465" stroke="#463f2d" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="150" cy="66" r="1.4" fill="#3a3320"/>
+  <circle cx="155" cy="62" r="1.4" fill="#3a3320"/>
+  <!-- anal fin -->
+  <path d="M186 122 C190 131 199 136 208 134 C204 127 202 121 201 116 Z" fill="#8d8465" stroke="#463f2d" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic -->
+  <path d="M134 124 C137 133 146 138 154 136 C151 130 149 125 148 120 Z" fill="#9c9273" stroke="#463f2d" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral: broad -->
+  <path d="M88 112 C94 121 105 125 114 123 C110 116 108 111 107 106 Z" fill="#9c9273" stroke="#463f2d" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- row of dark blotches along the lateral line -->
+  <g fill="#463f28" opacity="0.75">
+    <ellipse cx="108" cy="102" rx="6" ry="4.5"/>
+    <ellipse cx="130" cy="103" rx="6" ry="4.5"/>
+    <ellipse cx="152" cy="103" rx="6" ry="4.5"/>
+    <ellipse cx="174" cy="103" rx="6" ry="4.5"/>
+    <ellipse cx="196" cy="103" rx="5.5" ry="4"/>
+    <ellipse cx="216" cy="103" rx="5" ry="4"/>
+    <ellipse cx="234" cy="102" rx="4.5" ry="3.5"/>
+  </g>
+  <!-- fine speckling on back -->
+  <g fill="#463f28" opacity="0.5">
+    <circle cx="116" cy="86" r="1.6"/><circle cx="134" cy="88" r="1.6"/><circle cx="152" cy="86" r="1.6"/>
+    <circle cx="170" cy="88" r="1.6"/><circle cx="188" cy="90" r="1.6"/><circle cx="206" cy="94" r="1.5"/>
+  </g>
+  <!-- gill cover -->
+  <path d="M84 88 C92 96 92 112 85 120" fill="none" stroke="#463f2d" stroke-width="2" stroke-linecap="round"/>
+  <!-- underslung mouth with two barbels -->
+  <path d="M42 104 C50 104 58 105 66 107" fill="none" stroke="#463f2d" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M50 107 C49 113 46 118 41 121" fill="none" stroke="#463f2d" stroke-width="2" stroke-linecap="round"/>
+  <path d="M58 108 C58 113 56 118 52 121" fill="none" stroke="#463f2d" stroke-width="2" stroke-linecap="round"/>
+  <!-- eye: high on head -->
+  <circle cx="66" cy="92" r="6" fill="#ded0a2"/>
+  <circle cx="66" cy="92" r="3" fill="#241f10"/>
+  <circle cx="67.2" cy="90.8" r="1" fill="#ffffff"/>
+</svg>

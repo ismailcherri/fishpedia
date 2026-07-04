@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Güster">
+  <defs>
+    <linearGradient id="gub" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#48505e"/>
+      <stop offset="0.45" stop-color="#9fabb8"/>
+      <stop offset="0.72" stop-color="#e2e7ea"/>
+      <stop offset="1" stop-color="#fafbfc"/>
+    </linearGradient>
+  </defs>
+  <!-- tail: grey -->
+  <path d="M250 100 L280 80 L274 96 L284 100 L272 106 L278 124 Z" fill="#5d6672" stroke="#39404a" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: deep silver -->
+  <path d="M48 100 C58 76 84 56 118 52 C154 48 190 60 210 78 C224 90 232 96 234 100 C232 106 224 114 212 122 C190 136 152 146 118 142 C86 138 60 124 48 100 Z" fill="url(#gub)" stroke="#39404a" stroke-width="2.5"/>
+  <!-- dorsal fin -->
+  <path d="M156 56 L166 32 L180 36 C175 46 172 56 171 66 Z" fill="#6d7683" stroke="#39404a" stroke-width="2" stroke-linejoin="round"/>
+  <!-- anal fin: long -->
+  <path d="M172 136 C190 144 212 142 228 130 C224 124 222 118 221 112 C208 124 190 130 176 128 Z" fill="#6d7683" stroke="#39404a" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic: reddish base + grey tip -->
+  <path d="M128 136 C132 146 142 151 151 149 C147 142 145 136 144 130 Z" fill="#c4826a" stroke="#39404a" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral: reddish base -->
+  <path d="M92 112 C98 122 109 126 117 124 C113 117 111 112 110 107 Z" fill="#c4826a" stroke="#39404a" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- silver sheen -->
+  <path d="M86 72 C130 56 178 58 208 78" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" opacity="0.5"/>
+  <!-- scale hint -->
+  <g fill="none" stroke="#39404a" stroke-width="0.9" opacity="0.28">
+    <path d="M116 64 q6 8 0 16 M116 80 q6 8 0 16 M116 96 q6 8 0 16 M116 112 q5 7 0 14"/>
+    <path d="M134 58 q6 8 0 16 M134 74 q6 8 0 16 M134 90 q6 8 0 16 M134 106 q6 8 0 16"/>
+    <path d="M152 56 q6 8 0 16 M152 72 q6 8 0 16 M152 88 q6 8 0 16 M152 104 q6 8 0 16"/>
+    <path d="M170 60 q6 8 0 16 M170 76 q6 8 0 16 M170 92 q6 8 0 16 M170 108 q5 7 0 14"/>
+    <path d="M188 66 q5 7 0 14 M188 80 q5 7 0 14 M188 94 q5 7 0 14 M188 108 q5 7 0 14"/>
+    <path d="M206 76 q5 6 0 12 M206 88 q5 6 0 12 M206 100 q5 6 0 12"/>
+  </g>
+  <!-- head + gill -->
+  <path d="M88 68 C97 82 97 114 89 128" fill="none" stroke="#39404a" stroke-width="2" stroke-linecap="round"/>
+  <!-- small mouth -->
+  <path d="M48 100 C54 97 60 95 66 95" fill="none" stroke="#39404a" stroke-width="2" stroke-linecap="round"/>
+  <!-- very large eye -->
+  <circle cx="70" cy="86" r="8.5" fill="#e8e6d8"/>
+  <circle cx="70" cy="86" r="4.2" fill="#1c1d18"/>
+  <circle cx="72" cy="84" r="1.5" fill="#ffffff"/>
+</svg>

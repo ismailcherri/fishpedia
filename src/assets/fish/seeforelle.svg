@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Seeforelle">
+  <defs>
+    <linearGradient id="sfb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#47525c"/>
+      <stop offset="0.45" stop-color="#9aa8b2"/>
+      <stop offset="0.72" stop-color="#e3e8ea"/>
+      <stop offset="1" stop-color="#fafcfc"/>
+    </linearGradient>
+  </defs>
+  <!-- tail: broad, powerful -->
+  <path d="M260 100 C274 88 288 84 298 86 C294 94 294 108 298 116 C288 118 274 112 260 102 Z" fill="#6b7883" stroke="#3c4650" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: large, powerful trout -->
+  <path d="M22 100 C34 82 62 70 100 66 C148 61 196 68 228 80 C246 87 256 94 258 100 C256 106 248 112 234 118 C202 130 154 135 106 131 C68 128 36 116 22 100 Z" fill="url(#sfb)" stroke="#3c4650" stroke-width="2.5"/>
+  <!-- dorsal fin -->
+  <path d="M132 66 L141 42 L158 45 C153 54 150 63 149 73 Z" fill="#6b7883" stroke="#3c4650" stroke-width="2" stroke-linejoin="round"/>
+  <!-- adipose fin -->
+  <path d="M214 80 C220 74 228 74 232 78 C229 82 228 86 228 89 L216 86 Z" fill="#6b7883" stroke="#3c4650" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- anal fin -->
+  <path d="M198 124 C203 135 214 140 224 137 C220 130 218 123 217 117 Z" fill="#6b7883" stroke="#3c4650" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic -->
+  <path d="M142 129 C146 140 156 145 165 143 C161 136 159 130 158 124 Z" fill="#7d8a94" stroke="#3c4650" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral -->
+  <path d="M90 108 C96 118 107 122 115 120 C111 113 109 108 108 103 Z" fill="#7d8a94" stroke="#3c4650" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- irregular black spots, no red (key marker) -->
+  <g fill="#252c33" opacity="0.85">
+    <path d="M104 80 l4 -2 3 4 -4 3 z"/><path d="M126 88 l4 -3 3 3 -3 4 z"/><path d="M148 78 l4 -2 3 4 -4 3 z"/>
+    <path d="M170 88 l4 -3 3 3 -3 4 z"/><path d="M192 80 l4 -2 2 4 -3 3 z"/><path d="M214 88 l3 -2 3 3 -3 3 z"/>
+    <path d="M232 92 l3 -2 2 3 -2 3 z"/><path d="M116 100 l3 -2 3 3 -3 3 z"/><path d="M158 102 l3 -2 3 3 -3 3 z"/>
+    <path d="M200 100 l3 -2 3 3 -3 3 z"/><path d="M88 90 l3 -2 3 3 -3 3 z"/><path d="M138 108 l3 -2 2 3 -2 3 z"/>
+    <path d="M182 110 l3 -2 2 3 -2 3 z"/><path d="M74 84 l3 -2 2 3 -2 3 z"/>
+  </g>
+  <!-- silver sheen -->
+  <path d="M64 84 C130 68 200 72 244 86" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <!-- gill cover -->
+  <path d="M84 74 C94 86 94 112 85 124" fill="none" stroke="#3c4650" stroke-width="2" stroke-linecap="round"/>
+  <!-- big mouth -->
+  <path d="M22 100 C34 94 50 90 66 89" fill="none" stroke="#3c4650" stroke-width="2.4" stroke-linecap="round"/>
+  <!-- eye -->
+  <circle cx="58" cy="86" r="6.5" fill="#e6e4d4"/>
+  <circle cx="58" cy="86" r="3.3" fill="#1c2024"/>
+  <circle cx="59.4" cy="84.6" r="1.1" fill="#ffffff"/>
+</svg>

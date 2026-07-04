@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Aal">
+  <defs>
+    <linearGradient id="ab" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a4f3d"/>
+      <stop offset="0.6" stop-color="#7a7f5e"/>
+      <stop offset="0.85" stop-color="#d6cf9f"/>
+      <stop offset="1" stop-color="#f0ead0"/>
+    </linearGradient>
+  </defs>
+  <!-- continuous fin fringe along back, around tail, along belly -->
+  <path d="M96 76 C150 62 220 62 268 78 C290 86 300 98 296 110 C288 128 250 138 200 140 C160 142 124 138 104 130 L104 122 C130 130 170 133 206 130 C248 127 282 116 286 104 C288 94 276 84 258 79 C216 68 152 70 100 84 Z" fill="#6d7355" opacity="0.75" stroke="#3a3f2e" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- snake body -->
+  <path d="M16 104 C24 92 44 84 72 82 C120 78 160 74 204 74 C246 74 278 84 284 98 C288 108 276 118 252 124 C216 132 168 134 128 128 C92 123 60 122 36 116 C24 113 18 110 16 104 Z" fill="url(#ab)" stroke="#3a3f2e" stroke-width="2.5"/>
+  <!-- pectoral fin -->
+  <path d="M74 100 C80 110 90 114 98 112 C94 106 92 100 91 96 Z" fill="#6d7355" stroke="#3a3f2e" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- protruding lower jaw -->
+  <path d="M16 104 C22 100 32 97 42 97 M14 107 C20 110 28 112 36 112" fill="none" stroke="#3a3f2e" stroke-width="2" stroke-linecap="round"/>
+  <!-- gill slit -->
+  <path d="M68 90 C74 96 74 106 69 112" fill="none" stroke="#3a3f2e" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- slime sheen -->
+  <path d="M60 88 C120 80 200 78 256 86" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+  <!-- eye -->
+  <circle cx="46" cy="96" r="5" fill="#d9d4ac"/>
+  <circle cx="46" cy="96" r="2.6" fill="#1c1f16"/>
+  <circle cx="47" cy="95" r="0.9" fill="#ffffff"/>
+</svg>

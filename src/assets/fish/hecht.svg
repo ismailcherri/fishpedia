@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Hecht">
+  <defs>
+    <linearGradient id="hb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d5a3a"/>
+      <stop offset="0.55" stop-color="#6b8f5a"/>
+      <stop offset="0.8" stop-color="#c9d3a8"/>
+      <stop offset="1" stop-color="#e8ecd6"/>
+    </linearGradient>
+  </defs>
+  <!-- tail fin -->
+  <path d="M281 100 L308 76 L302 96 L312 100 L302 104 L308 124 Z" fill="#4c6b42" stroke="#33492c" stroke-width="2" stroke-linejoin="round"/>
+  <!-- body: long, arrow-like -->
+  <path d="M18 101 C30 88 58 78 96 76 C150 73 220 78 262 88 C274 91 282 95 284 100 C282 105 274 109 262 112 C220 122 150 127 96 124 C58 122 30 112 18 101 Z" fill="url(#hb)" stroke="#33492c" stroke-width="2.5"/>
+  <!-- duckbill snout line -->
+  <path d="M18 101 C34 99 52 98 66 99" fill="none" stroke="#33492c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M22 106 C34 106 44 105 54 104" fill="none" stroke="#33492c" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <!-- dorsal fin far back -->
+  <path d="M228 82 C238 68 256 64 266 68 C262 76 260 82 259 88 Z" fill="#4c6b42" stroke="#33492c" stroke-width="2" stroke-linejoin="round"/>
+  <!-- anal fin far back -->
+  <path d="M232 117 C240 130 254 134 264 131 C260 124 258 118 257 113 Z" fill="#4c6b42" stroke="#33492c" stroke-width="2" stroke-linejoin="round"/>
+  <!-- pelvic fin -->
+  <path d="M150 122 C154 132 164 137 172 136 C168 129 166 124 165 120 Z" fill="#5a7a4b" stroke="#33492c" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- pectoral fin -->
+  <path d="M84 112 C90 121 100 125 108 123 C104 117 102 112 101 108 Z" fill="#5a7a4b" stroke="#33492c" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- gill cover -->
+  <path d="M78 82 C88 92 88 110 79 120" fill="none" stroke="#33492c" stroke-width="2" stroke-linecap="round"/>
+  <!-- light oval spots -->
+  <g fill="#dfe6bd" opacity="0.85">
+    <ellipse cx="112" cy="90" rx="5" ry="2.4"/>
+    <ellipse cx="134" cy="98" rx="5" ry="2.4"/>
+    <ellipse cx="126" cy="110" rx="4.5" ry="2.2"/>
+    <ellipse cx="156" cy="88" rx="5" ry="2.4"/>
+    <ellipse cx="168" cy="104" rx="5" ry="2.4"/>
+    <ellipse cx="186" cy="92" rx="5" ry="2.4"/>
+    <ellipse cx="196" cy="108" rx="4.5" ry="2.2"/>
+    <ellipse cx="214" cy="96" rx="5" ry="2.4"/>
+    <ellipse cx="232" cy="104" rx="4.5" ry="2.2"/>
+    <ellipse cx="246" cy="94" rx="4" ry="2"/>
+    <ellipse cx="146" cy="115" rx="4" ry="2"/>
+    <ellipse cx="206" cy="118" rx="4" ry="2"/>
+  </g>
+  <!-- teeth hint on lower jaw -->
+  <path d="M26 104 l3 3 M33 104.5 l3 3 M40 104.5 l3 3" stroke="#f4f6ee" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- eye -->
+  <circle cx="62" cy="90" r="7" fill="#f2e8b0"/>
+  <circle cx="62" cy="90" r="3.6" fill="#1c2417"/>
+  <circle cx="63.4" cy="88.6" r="1.2" fill="#ffffff"/>
+</svg>
