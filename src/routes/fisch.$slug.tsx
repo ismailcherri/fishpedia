@@ -1,6 +1,7 @@
 import { Link, createFileRoute, notFound } from '@tanstack/react-router'
 import { getFish } from '../data/fish'
 import { fishImageUrl } from '../lib/fishImages'
+import { fishPhoto } from '../lib/fishPhotos'
 import { usePrefs } from '../lib/prefs'
 import { RegulationTable } from '../components/RegulationTable'
 
@@ -34,6 +35,11 @@ function FishDetailPage() {
   const fish = getFish(fishId)!
   const { lang, t, tx } = usePrefs()
 
+  const photo = fish.image.photoUrl
+    ? { url: fish.image.photoUrl, credit: null }
+    : fishPhoto(fish.id)
+  const svgUrl = fishImageUrl(fish.image.svg)
+
   const isFullyProtected =
     fish.regulations.berlin.fullyProtected &&
     fish.regulations.brandenburg.fullyProtected
@@ -48,16 +54,50 @@ function FishDetailPage() {
       </Link>
 
       <div className="overflow-hidden rounded-3xl bg-gradient-to-b from-water-100 to-white shadow-sm ring-1 ring-water-100 dark:from-water-800 dark:to-water-900 dark:ring-water-800">
-        <img
-          src={fish.image.photoUrl ?? fishImageUrl(fish.image.svg)}
-          alt={fish.names[lang]}
-          className="mx-auto aspect-8/5 w-full max-w-xl object-contain px-4 pt-3"
-        />
-        {fish.image.photoAttribution && (
-          <p className="px-4 pb-1 text-right text-[10px] text-slate-400">
-            {fish.image.photoAttribution}
-          </p>
-        )}
+        <div className="grid gap-px bg-water-100 dark:bg-water-800 sm:grid-cols-2">
+          {photo && (
+            <figure className="bg-white p-3 dark:bg-water-900">
+              <img
+                src={photo.url}
+                alt={`${fish.names[lang]} – ${t('photoLabel')}`}
+                className="mx-auto aspect-8/5 w-full max-w-xl rounded-xl object-cover"
+              />
+              <figcaption className="mt-1.5 flex items-baseline justify-between gap-2 text-[10px] leading-tight text-slate-400 dark:text-slate-500">
+                <span className="font-semibold uppercase tracking-wide">
+                  {t('photoLabel')}
+                </span>
+                {photo.credit ? (
+                  <a
+                    href={photo.credit.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="truncate text-right hover:underline"
+                  >
+                    {photo.credit.author} · {photo.credit.license}
+                  </a>
+                ) : (
+                  fish.image.photoAttribution && (
+                    <span className="truncate text-right">
+                      {fish.image.photoAttribution}
+                    </span>
+                  )
+                )}
+              </figcaption>
+            </figure>
+          )}
+          <figure
+            className={`bg-white p-3 dark:bg-water-900 ${photo ? '' : 'sm:col-span-2'}`}
+          >
+            <img
+              src={svgUrl}
+              alt={`${fish.names[lang]} – ${t('illustrationLabel')}`}
+              className="mx-auto aspect-8/5 w-full max-w-xl object-contain"
+            />
+            <figcaption className="mt-1.5 text-[10px] font-semibold uppercase tracking-wide leading-tight text-slate-400 dark:text-slate-500">
+              {t('illustrationLabel')}
+            </figcaption>
+          </figure>
+        </div>
         <div className="p-4 sm:p-5">
           <h1 className="text-2xl font-extrabold leading-tight">
             {fish.names[lang]}

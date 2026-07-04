@@ -48,6 +48,8 @@ export const dict = {
     en: 'No fish found. Adjust your search or filters.',
   },
   backToList: { de: 'Alle Fische', en: 'All fish' },
+  photoLabel: { de: 'Foto', en: 'Photo' },
+  illustrationLabel: { de: 'Illustration', en: 'Illustration' },
   protectedBanner: {
     de: 'Diese Art ist ganzjährig geschont und muss unverzüglich schonend zurückgesetzt werden!',
     en: 'This species is protected year-round and must be released immediately and gently!',
