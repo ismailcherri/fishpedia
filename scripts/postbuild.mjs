@@ -7,7 +7,7 @@
 import { writeFileSync } from 'node:fs'
 
 const out = new URL('../dist/client/', import.meta.url)
-const base = process.env.BASE_PATH ?? '/fishpedia/'
+const base = process.env.BASE_PATH ?? '/fishpedea/'
 
 const fallback = `<!doctype html>
 <html lang="de">
@@ -15,9 +15,9 @@ const fallback = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>fishpedia</title>
+<title>fishpedea</title>
 <script>
-sessionStorage.setItem('fishpedia.redirect', location.pathname + location.search);
+sessionStorage.setItem('fishpedea.redirect', location.pathname + location.search);
 location.replace(${JSON.stringify(base)});
 </script>
 </head>

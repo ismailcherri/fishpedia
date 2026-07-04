@@ -1,7 +1,7 @@
-/* Fishpedia service worker: offline support via runtime caching.
+/* Fishpedea service worker: offline support via runtime caching.
  * Pages and assets are cached as they are visited (stale-while-revalidate),
  * so the app keeps working at the water without reception. */
-const CACHE = 'fishpedia-v1'
+const CACHE = 'fishpedea-v1'
 const BASE = new URL(self.registration.scope).pathname
 
 self.addEventListener('install', (event) => {
