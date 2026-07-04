@@ -5,25 +5,25 @@
 export const STAND = '2026-07'
 
 export const SOURCES = [
-  {
-    name: {
-      de: 'Fischereiamt Berlin – Mindestmaße und Schonzeiten (LFischO Bln)',
-      en: 'Berlin Fisheries Office – minimum sizes and closed seasons (LFischO Bln)',
+    {
+        name: {
+            de: 'Fischereiamt Berlin – Mindestmaße und Schonzeiten (LFischO Bln)',
+            en: 'Berlin Fisheries Office – minimum sizes and closed seasons (LFischO Bln)',
+        },
+        url: 'https://www.berlin.de/fischereiamt/angelfischen/mindestmasse-und-schonzeiten/',
     },
-    url: 'https://www.berlin.de/fischereiamt/angelfischen/mindestmasse-und-schonzeiten/',
-  },
-  {
-    name: {
-      de: 'Fischereiordnung des Landes Brandenburg (BbgFischO), Anlage 1',
-      en: 'Brandenburg Fisheries Ordinance (BbgFischO), Annex 1',
+    {
+        name: {
+            de: 'Fischereiordnung des Landes Brandenburg (BbgFischO), Anlage 1',
+            en: 'Brandenburg Fisheries Ordinance (BbgFischO), Annex 1',
+        },
+        url: 'https://bravors.brandenburg.de/de/verordnungen-212446',
     },
-    url: 'https://bravors.brandenburg.de/de/verordnungen-212446',
-  },
-  {
-    name: {
-      de: 'MLEUV Brandenburg – Übersicht Schonzeiten (PDF)',
-      en: 'Brandenburg Ministry (MLEUV) – closed seasons overview (PDF)',
+    {
+        name: {
+            de: 'MLEUV Brandenburg – Übersicht Schonzeiten (PDF)',
+            en: 'Brandenburg Ministry (MLEUV) – closed seasons overview (PDF)',
+        },
+        url: 'https://mleuv.brandenburg.de/sixcms/media.php/9/Schonzeiten-Fischarten-de.pdf',
     },
-    url: 'https://mleuv.brandenburg.de/sixcms/media.php/9/Schonzeiten-Fischarten-de.pdf',
-  },
 ] as const

@@ -1,9 +1,9 @@
 {
-  "name": "Fishpidea – Angel-Begleiter Berlin & Brandenburg",
-  "short_name": "Fishpidea",
-  "description": "Fischarten, Schonzeiten und Mindestmaße für Berlin und Brandenburg – offline nutzbar.",
-  "start_url": "/fishpidea/",
-  "scope": "/fishpidea/",
+  "name": "Fishpedia - Angel-Begleiter Berlin & Brandenburg",
+  "short_name": "fishpedia",
+  "description": "Fischarten, Schonzeiten und Mindestmaße für Berlin und Brandenburg - offline nutzbar.",
+  "start_url": "/fishpedia/",
+  "scope": "/fishpedia/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#eef7f9",
@@ -11,18 +11,18 @@
   "lang": "de",
   "icons": [
     {
-      "src": "/fishpidea/icon.svg",
+      "src": "/fishpedia/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/fishpidea/icon-192.png",
+      "src": "/fishpedia/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/fishpidea/icon-512.png",
+      "src": "/fishpedia/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

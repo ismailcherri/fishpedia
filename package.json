@@ -1,31 +1,35 @@
 {
-  "name": "fishpidea",
-  "private": true,
-  "version": "0.1.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build && node scripts/postbuild.mjs",
-    "preview": "vite preview",
-    "test": "vitest run",
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@tanstack/react-router": "^1.170.17",
-    "@tanstack/react-start": "^1.168.27",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7"
-  },
-  "devDependencies": {
-    "@tailwindcss/vite": "^4.3.2",
-    "@types/node": "^26.1.0",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.2",
-    "playwright-core": "^1.61.1",
-    "tailwindcss": "^4.3.2",
-    "typescript": "^5.9.3",
-    "vite": "^7.3.4",
-    "vitest": "^4.0.8"
-  }
+    "name": "fishpedia",
+    "private": true,
+    "version": "0.1.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite dev",
+        "build": "vite build && node scripts/postbuild.mjs",
+        "preview": "vite preview",
+        "test": "vitest run",
+        "typecheck": "tsc --noEmit",
+        "format": "prettier --write ."
+    },
+    "dependencies": {
+        "@tanstack/react-router": "^1.170.17",
+        "@tanstack/react-start": "^1.168.27",
+        "react": "^19.2.7",
+        "react-dom": "^19.2.7"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.3.2",
+        "@types/node": "^26.1.0",
+        "@types/react": "^19.2.7",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^5.1.2",
+        "playwright-core": "^1.61.1",
+        "prettier": "^3.9.4",
+        "prettier-plugin-organize-imports": "^4.3.0",
+        "prettier-plugin-tailwindcss": "^0.8.0",
+        "tailwindcss": "^4.3.2",
+        "typescript": "^5.9.3",
+        "vite": "^7.3.4",
+        "vitest": "^4.0.8"
+    }
 }

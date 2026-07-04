@@ -3,26 +3,29 @@
 import { photoCredits, type PhotoCredit } from '../data/photoCredits'
 
 const photos = import.meta.glob('../assets/fish/photos/*.{jpg,jpeg,png}', {
-  eager: true,
-  query: '?url',
-  import: 'default',
+    eager: true,
+    query: '?url',
+    import: 'default',
 }) as Record<string, string>
 
 // Map bare species id → bundled asset URL, ignoring the file extension.
 const byId: Record<string, string> = {}
 for (const [path, url] of Object.entries(photos)) {
-  const id = path.split('/').pop()!.replace(/\.[^.]+$/, '')
-  byId[id] = url
+    const id = path
+        .split('/')
+        .pop()!
+        .replace(/\.[^.]+$/, '')
+    byId[id] = url
 }
 
 export interface FishPhoto {
-  url: string
-  credit: PhotoCredit
+    url: string
+    credit: PhotoCredit
 }
 
 export function fishPhoto(id: string): FishPhoto | null {
-  const url = byId[id]
-  const credit = photoCredits[id]
-  if (!url || !credit) return null
-  return { url, credit }
+    const url = byId[id]
+    const credit = photoCredits[id]
+    if (!url || !credit) return null
+    return { url, credit }
 }

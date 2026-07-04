@@ -1,4 +1,4 @@
-# 🎣 Fishpidea
+# 🎣 Fishpedia
 
 Mobile-first fisher companion app (PWA) for **Berlin & Brandenburg**: browse the fish
 species of the local lakes and rivers, identify a catch via illustration and key
@@ -22,7 +22,7 @@ npm run build      # static build -> dist/client (all routes prerendered)
 npm run preview    # serve the production build locally
 ```
 
-The app is served under the base path `/fishpidea/` (GitHub Pages project page).
+The app is served under the base path `/fishpedia/` (GitHub Pages project page).
 Override with `BASE_PATH=/ npm run build` for root deployments.
 
 ## Deployment
@@ -30,21 +30,21 @@ Override with `BASE_PATH=/ npm run build` for root deployments.
 Pushes to `main` deploy automatically to GitHub Pages via
 `.github/workflows/deploy.yml` (build → upload `dist/client` → deploy).
 
-**One-time setup:** repository *Settings → Pages → Source: “GitHub Actions”*.
-The app is then live at `https://<owner>.github.io/fishpidea/`.
+**One-time setup:** repository _Settings → Pages → Source: “GitHub Actions”_.
+The app is then live at `https://<owner>.github.io/fishpedia/`.
 
 ## Data maintenance
 
 All content lives in typed data files — no CMS, no backend:
 
-| What | Where |
-| --- | --- |
-| Species, descriptions, identification, rules | `src/data/species/*.ts` |
-| Data “Stand” (as-of) date and official sources | `src/data/meta.ts` |
-| Illustrations (one SVG per species) | `src/assets/fish/*.svg` |
-| Real photos (one per species) | `src/assets/fish/photos/*.{jpg,png}` |
-| Photo attribution (author / licence / source) | `src/data/photoCredits.ts` (generated) |
-| UI strings (DE/EN) | `src/i18n/dict.ts` |
+| What                                           | Where                                  |
+| ---------------------------------------------- | -------------------------------------- |
+| Species, descriptions, identification, rules   | `src/data/species/*.ts`                |
+| Data “Stand” (as-of) date and official sources | `src/data/meta.ts`                     |
+| Illustrations (one SVG per species)            | `src/assets/fish/*.svg`                |
+| Real photos (one per species)                  | `src/assets/fish/photos/*.{jpg,png}`   |
+| Photo attribution (author / licence / source)  | `src/data/photoCredits.ts` (generated) |
+| UI strings (DE/EN)                             | `src/i18n/dict.ts`                     |
 
 Regulation values are transcriptions of **Anlage 1 LFischO Berlin** and
 **Anlage 1 BbgFischO** (see links in `src/data/meta.ts` and the in-app info
