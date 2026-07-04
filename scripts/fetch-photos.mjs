@@ -14,7 +14,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const PHOTO_DIR = path.join(ROOT, 'src/assets/fish/photos')
 const CREDITS_FILE = path.join(ROOT, 'src/data/photoCredits.ts')
 const UA =
-  'fishpedea/1.0 (https://github.com/ismailcherri/fishpedea; hobby fishing companion app)'
+  'fishpedia/1.0 (https://github.com/ismailcherri/fishpedia; hobby fishing companion app)'
 
 // id → candidate Wikipedia page titles, most specific first.
 const SPECIES = [

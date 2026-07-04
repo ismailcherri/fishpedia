@@ -20,7 +20,7 @@ export const Route = createRootRoute({
         name: 'viewport',
         content: 'width=device-width, initial-scale=1, viewport-fit=cover',
       },
-      { title: 'Fishpedea - Angel-Begleiter für Berlin & Brandenburg' },
+      { title: 'Fishpedia - Angel-Begleiter für Berlin & Brandenburg' },
       {
         name: 'description',
         content:
@@ -28,7 +28,7 @@ export const Route = createRootRoute({
       },
       { name: 'theme-color', content: '#1f404d' },
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
-      { name: 'application-name', content: 'Fishpedea' },
+      { name: 'application-name', content: 'Fishpedia' },
     ],
     links: [
       { rel: 'stylesheet', href: appCss },
@@ -56,9 +56,9 @@ function RootComponent() {
 
   useEffect(() => {
     // restore deep links that GitHub Pages answered with 404.html
-    const stored = sessionStorage.getItem('fishpedea.redirect')
+    const stored = sessionStorage.getItem('fishpedia.redirect')
     if (stored) {
-      sessionStorage.removeItem('fishpedea.redirect')
+      sessionStorage.removeItem('fishpedia.redirect')
       router.history.replace(stored)
     }
 
@@ -96,7 +96,7 @@ function AppShell({ children }: { children: ReactNode }) {
             </span>
             <div>
               <span className="text-water-800 dark:text-water-100 block text-lg leading-none font-extrabold tracking-tight">
-                Fishpedea
+                Fishpedia
               </span>
               <span className="text-water-600 dark:text-water-300 hidden text-[11px] sm:block">
                 {t('tagline')}
@@ -157,7 +157,7 @@ function NotFound() {
         to="/"
         className="text-water-600 dark:text-water-300 mt-2 inline-block underline"
       >
-        Fishpedea
+        Fishpedia
       </Link>
     </div>
   )

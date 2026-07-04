@@ -1,4 +1,4 @@
-# 🎣 Fishpedea
+# 🎣 Fishpedia
 
 Mobile-first fisher companion app (PWA) for **Berlin & Brandenburg**: browse the fish
 species of the local lakes and rivers, identify a catch via illustration and key
@@ -22,7 +22,7 @@ npm run build      # static build -> dist/client (all routes prerendered)
 npm run preview    # serve the production build locally
 ```
 
-The app is served under the base path `/fishpedea/` (GitHub Pages project page).
+The app is served under the base path `/fishpedia/` (GitHub Pages project page).
 Override with `BASE_PATH=/ npm run build` for root deployments.
 
 ## Deployment
@@ -31,7 +31,7 @@ Pushes to `main` deploy automatically to GitHub Pages via
 `.github/workflows/deploy.yml` (build → upload `dist/client` → deploy).
 
 **One-time setup:** repository _Settings → Pages → Source: “GitHub Actions”_.
-The app is then live at `https://<owner>.github.io/fishpedea/`.
+The app is then live at `https://<owner>.github.io/fishpedia/`.
 
 ## Data maintenance
 

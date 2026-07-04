@@ -17,7 +17,7 @@ export const Route = createFileRoute('/fisch/$slug')({
       meta: fish
         ? [
             {
-              title: `${fish.names.de} (${fish.names.scientific}) - Fishpedea`,
+              title: `${fish.names.de} (${fish.names.scientific}) - Fishpedia`,
             },
             {
               name: 'description',

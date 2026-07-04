@@ -3,8 +3,8 @@ import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import viteReact from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
-// Deployed under https://<user>.github.io/fishpedea/ — override with BASE_PATH=/ for local root serving
-const base = process.env.BASE_PATH ?? '/fishpedea/'
+// Deployed under https://<user>.github.io/fishpedia/ — override with BASE_PATH=/ for local root serving
+const base = process.env.BASE_PATH ?? '/fishpedia/'
 
 export default defineConfig({
   base,

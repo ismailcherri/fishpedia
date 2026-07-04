@@ -16,8 +16,8 @@ interface Prefs {
 
 const PrefsContext = createContext<Prefs | null>(null)
 
-const LANG_KEY = 'fishpedea.lang'
-const REGION_KEY = 'fishpedea.region'
+const LANG_KEY = 'fishpedia.lang'
+const REGION_KEY = 'fishpedia.region'
 
 export function PrefsProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>('de')

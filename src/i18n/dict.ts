@@ -1,5 +1,5 @@
 export const dict = {
-  appName: { de: 'Fishpedea', en: 'Fishpedea' },
+  appName: { de: 'Fishpedia', en: 'Fishpedia' },
   tagline: {
     de: 'Dein Angel-Begleiter für Berlin & Brandenburg',
     en: 'Your fishing companion for Berlin & Brandenburg',
@@ -70,8 +70,8 @@ export const dict = {
   },
   infoSources: { de: 'Offizielle Quellen', en: 'Official sources' },
   installHint: {
-    de: 'Tipp: Über »Zum Startbildschirm hinzufügen« wird Fishpedea zur App und funktioniert auch offline am Wasser.',
-    en: 'Tip: Use “Add to Home Screen” to install Fishpedea as an app - it also works offline at the water.',
+    de: 'Tipp: Über »Zum Startbildschirm hinzufügen« wird Fishpedia zur App und funktioniert auch offline am Wasser.',
+    en: 'Tip: Use “Add to Home Screen” to install Fishpedia as an app - it also works offline at the water.',
   },
   footerNote: {
     de: 'Alle Angaben ohne Gewähr – amtliche Quellen sind verbindlich.',
