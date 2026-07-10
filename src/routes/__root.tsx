@@ -119,6 +119,15 @@ function AppShell({ children }: { children: ReactNode }) {
             {t('navFish')}
           </Link>
           <Link
+            to="/karte"
+            className={navLink}
+            activeProps={{
+              className: `${navLink} ${navLinkActive}`,
+            }}
+          >
+            {t('navMap')}
+          </Link>
+          <Link
             to="/kalender"
             className={navLink}
             activeProps={{

@@ -68,5 +68,16 @@ shown under each photo and link back to the source.
 A species may also set an explicit `image.photoUrl` / `photoAttribution` in its
 data file; that URL takes precedence over the bundled photo.
 
+### Map of permitted waters (`/karte`)
+
+The waters of the Berlin Angelkarte live in `src/data/waters/berlinWaters.ts`
+(permit conditions in `src/data/waters/permit.ts` — no personal data there).
+The geometries are **hand-drawn approximations**. To replace one with the exact
+shape: run a query on [overpass-turbo.eu](https://overpass-turbo.eu) (e.g.
+`way["name"="Landwehrkanal"]({{bbox}}); out geom;`), export as GeoJSON, paste
+the feature's `geometry` into the water's entry and drop its `approximate`
+flag. Coordinates are `[lng, lat]`. Brandenburg waters can be added later as a
+second file following the same `WaterArea` shape.
+
 ⚠️ The app shows guidance, not legal advice: official publications and
 water-specific rules (Gewässerordnung, Erlaubnisschein) always prevail.

@@ -35,8 +35,36 @@ export const dict = {
   categorySalmonid: { de: 'Salmoniden', en: 'Salmonids' },
   categoryProtected: { de: 'Geschützte Arten', en: 'Protected species' },
   navFish: { de: 'Fische', en: 'Fish' },
+  navMap: { de: 'Karte', en: 'Map' },
   navCalendar: { de: 'Kalender', en: 'Calendar' },
   navInfo: { de: 'Info', en: 'Info' },
+  mapTitle: {
+    de: 'Erlaubte Gewässer (Berlin)',
+    en: 'Permitted waters (Berlin)',
+  },
+  mapIntro: {
+    de: 'Diese Gewässer deckt die Angelkarte ab. Antippen zeigt Name und Auflagen.',
+    en: 'These waters are covered by the permit. Tap an area for its name and conditions.',
+  },
+  mapLegendCanal: {
+    de: 'Kanäle & Flussstrecken',
+    en: 'Canals & river sections',
+  },
+  mapLegendLake: { de: 'Seen', en: 'Lakes' },
+  mapApproximate: { de: 'ungefähre Grenzen', en: 'approximate boundaries' },
+  mapDisclaimer: {
+    de: 'Grenzen sind grob eingezeichnet und ersetzen nicht den Erlaubnisschein oder die Gewässerordnung. Kartenkacheln benötigen Internet; die Gewässerliste funktioniert auch offline.',
+    en: 'Boundaries are drawn roughly and do not replace the permit or the water rules. Map tiles need internet; the water list also works offline.',
+  },
+  mapBrandenburgSoon: {
+    de: 'Brandenburger Gewässer folgen später – die Karte zeigt die Berliner Angelkarte.',
+    en: 'Brandenburg waters will follow – the map shows the Berlin permit.',
+  },
+  mapWaters: { de: 'Gewässer', en: 'Waters' },
+  mapZoomHint: {
+    de: 'Eintrag antippen, um das Gewässer auf der Karte zu zeigen.',
+    en: 'Tap an entry to show the water on the map.',
+  },
   calendarTitle: { de: 'Schonzeiten-Kalender', en: 'Closed season calendar' },
   calendarHint: {
     de: 'Rote Felder markieren die Schonzeit, das Feld des aktuellen Monats ist umrandet. Ganzjährig geschonte Arten sind vollständig markiert.',
