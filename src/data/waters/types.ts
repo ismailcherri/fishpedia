@@ -8,7 +8,10 @@ export interface LineStringGeometry {
 
 export interface PolygonGeometry {
   type: 'Polygon'
-  /** first ring is the outer boundary */
+  /**
+   * Rings are rendered with the even-odd rule: further rings are islands
+   * (holes) or, for pond chains, separate basins of the same water.
+   */
   coordinates: [number, number][][]
 }
 
@@ -21,7 +24,7 @@ export interface WaterArea {
   kind: 'lake' | 'canal' | 'river'
   /** section limits or restrictions from the permit, e.g. "nur Bootsangeln" */
   note?: LocalizedText
-  /** geometry is a rough hand-drawn approximation – shown with a hint */
+  /** geometry contains schematic parts (e.g. an assumed boundary) – shown dashed */
   approximate?: boolean
   geometry: WaterGeometry
 }
