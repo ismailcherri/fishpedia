@@ -5,3 +5,4 @@ dist
 .output
 *.local
 src/routeTree.gen.ts
+.env

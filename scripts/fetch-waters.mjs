@@ -96,18 +96,20 @@ const manifest = [
     to: [13.7106, 52.3806],
   },
   {
-    // permit: von der B1 bis zur Spree
+    // permit: von der B1 bis zur Spree; waterway relation "Wuhle" (its
+    // lower course is mapped as unnamed member ways)
     id: 'wuhle',
     kind: 'line',
-    query: `way["waterway"~"^(river|stream|canal|drain)$"]["name"="Wuhle"](52.42,13.52,52.54,13.62);`,
+    query: `relation(2406420)->.rel;way(r.rel)(52.42,13.52,52.54,13.62);`,
     from: [13.5734, 52.5044],
     to: [13.5887, 52.4415],
   },
   {
-    // permit: vom Einlauf Britzer Zweigkanal bis Mühlendammschleuse
+    // permit: vom Einlauf Britzer Zweigkanal bis Mühlendammschleuse;
+    // waterway relation "Spree" (some sections are unnamed member ways)
     id: 'spree',
     kind: 'line',
-    query: `way["waterway"="river"]["name"="Spree"](52.45,13.38,52.53,13.50);`,
+    query: `relation(390274)->.rel;way(r.rel)(52.45,13.38,52.53,13.50);`,
     from: [13.475, 52.473],
     to: [13.4073, 52.514],
   },
@@ -125,10 +127,12 @@ const manifest = [
   { id: 'orankesee', kind: 'polygon', ways: [4788724] },
   { id: 'obersee', kind: 'polygon', relations: [312543] },
   {
-    // DAV B 03-102: Teichkette im Mittelbruch (Bucher Forst)
+    // DAV B 03-102: Karpfenteich 1 + 2 im Mittelbruch (Bucher Forst);
+    // Karpfenteich 3 (relation 17073038) is gesperrt – not included
     id: 'bucher-teiche',
     kind: 'polygon',
-    ways: [10570219, 852176508, 852176509, 852176510],
+    ways: [10570219],
+    relations: [2733371],
   },
   { id: 'butzer-see', kind: 'polygon', relations: [4180313] }, // DAV B 04-101
   { id: 'habermannsee', kind: 'polygon', relations: [3559646] }, // DAV B 04-102
