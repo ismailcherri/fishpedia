@@ -147,10 +147,9 @@ const meta: Omit<WaterArea, 'geometry'>[] = [
     id: 'bucher-teiche',
     name: 'Bucher Teich I–II',
     kind: 'lake',
-    approximate: true,
     note: {
-      de: 'Teichkette im Mittelbruch (Bucher Forst); Teich III gesperrt – Naturschutz.',
-      en: 'Pond chain in the Mittelbruch (Buch forest); pond III closed – nature reserve.',
+      de: 'Karpfenteiche im Mittelbruch (Bucher Forst); Teich III gesperrt – Naturschutz.',
+      en: 'Carp ponds in the Mittelbruch (Buch forest); pond III closed – nature reserve.',
     },
   },
   {
