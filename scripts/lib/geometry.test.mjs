@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest'
-import { clipLine, simplify, stitchRing, stitchWays } from './geometry.mjs'
+import {
+  clipLine,
+  clipRingBelowLat,
+  simplify,
+  stitchRing,
+  stitchWays,
+} from './geometry.mjs'
 
 describe('stitchWays', () => {
   it('chains segments sharing endpoints, reversing where needed', () => {
@@ -111,6 +117,31 @@ describe('clipLine', () => {
 
   it('returns full line when clip points are at the ends', () => {
     expect(clipLine(line, [0, 0], [4, 0])).toEqual(line)
+  })
+})
+
+describe('clipRingBelowLat', () => {
+  // closed square ring from lat 0..2
+  const ring = [
+    [0, 0],
+    [4, 0],
+    [4, 2],
+    [0, 2],
+    [0, 0],
+  ]
+
+  it('keeps the part below the cut latitude, closed, with intersections', () => {
+    const out = clipRingBelowLat(ring, 1)
+    expect(out[0]).toEqual(out[out.length - 1])
+    expect(out).toContainEqual([4, 1])
+    expect(out).toContainEqual([0, 1])
+    expect(out.every(([, lat]) => lat <= 1)).toBe(true)
+    expect(out).toContainEqual([0, 0])
+    expect(out).toContainEqual([4, 0])
+  })
+
+  it('returns the whole ring when the cut is above it', () => {
+    expect(clipRingBelowLat(ring, 5)).toEqual(ring)
   })
 })
 

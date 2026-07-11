@@ -72,6 +72,28 @@ export function clipLine(coords, from, to) {
   return coords.slice(i, j + 1)
 }
 
+/**
+ * Half-plane clip (Sutherland–Hodgman): the part of a closed ring at or
+ * below `maxLat`, with intersection points inserted on crossing edges.
+ */
+export function clipRingBelowLat(ring, maxLat) {
+  const out = []
+  for (let i = 0; i < ring.length - 1; i++) {
+    const a = ring[i]
+    const b = ring[i + 1]
+    const aIn = a[1] <= maxLat
+    const bIn = b[1] <= maxLat
+    if (aIn) out.push(a)
+    if (aIn !== bIn) {
+      const t = (maxLat - a[1]) / (b[1] - a[1])
+      out.push([a[0] + t * (b[0] - a[0]), maxLat])
+    }
+  }
+  if (out.length > 0 && key(out[0]) !== key(out[out.length - 1]))
+    out.push(out[0])
+  return out
+}
+
 /** Perpendicular distance of point p from segment a–b. */
 function perpDist(p, a, b) {
   const dx = b[0] - a[0]
