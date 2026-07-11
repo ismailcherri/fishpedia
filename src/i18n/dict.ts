@@ -87,6 +87,14 @@ export const dict = {
     de: 'Gewässer suchen (Name oder Nummer) …',
     en: 'Search waters (name or number)…',
   },
+  mapClubsTitle: {
+    de: 'Gewässer nach Verein',
+    en: 'Waters by club',
+  },
+  mapClubsHint: {
+    de: 'Verein aufklappen und Eintrag antippen, um das Gewässer auf der Karte zu zeigen.',
+    en: 'Expand a club and tap an entry to show the water on the map.',
+  },
   mapWaters: { de: 'Gewässer', en: 'Waters' },
   mapDirections: { de: 'Route', en: 'Directions' },
   mapZoomHint: {

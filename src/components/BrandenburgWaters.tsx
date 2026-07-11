@@ -53,6 +53,7 @@ export function BrandenburgPage({ apiKey }: { apiKey: string | undefined }) {
         </MapContainer>
         <Footnotes />
         <WaterSearch onSelect={() => {}} />
+        <ClubList onSelect={() => {}} />
       </>
     )
   }
@@ -106,6 +107,7 @@ function BrandenburgWithMap({
       </MapContainer>
       <Footnotes />
       <WaterSearch onSelect={focusWater} />
+      <ClubList onSelect={focusWater} />
     </>
   )
 }
@@ -241,32 +243,125 @@ function WaterSearch({
       )}
       <ul className="ring-water-100 dark:bg-water-900 dark:ring-water-800 mt-2 rounded-2xl bg-white ring-1 empty:hidden">
         {matches.slice(0, MAX_RESULTS).map((w) => (
-          <li key={w.id} className="flex items-start gap-1 px-1 py-0.5">
-            <button
-              type="button"
-              onClick={() => onSelect(w)}
-              className="hover:bg-water-50 dark:hover:bg-water-800 min-w-0 flex-1 rounded-lg px-2 py-1.5 text-left text-sm transition-colors"
-            >
-              <span className="font-semibold">{w.name}</span>
-              <span className="block text-xs text-slate-500 dark:text-slate-400">
-                {[w.id, w.ha ? `${w.ha} ha` : null, w.club]
-                  .filter(Boolean)
-                  .join(' · ')}
-              </span>
-            </button>
-            <a
-              href={directionsUrl(w.lat, w.lng)}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`${t('mapDirections')}: ${w.name}`}
-              title={t('mapDirections')}
-              className="hover:bg-water-50 dark:hover:bg-water-800 mt-1 shrink-0 rounded-lg px-2 py-1.5 text-sm transition-colors"
-            >
-              🧭
-            </a>
-          </li>
+          <WaterRow key={w.id} water={w} onSelect={onSelect} showClub />
         ))}
       </ul>
     </section>
+  )
+}
+
+function WaterRow({
+  water,
+  onSelect,
+  showClub = false,
+}: {
+  water: BrandenburgWater
+  onSelect: (water: BrandenburgWater) => void
+  showClub?: boolean
+}) {
+  const { t } = usePrefs()
+  const facts = [
+    water.id,
+    water.ha ? `${water.ha} ha` : null,
+    showClub ? water.club : null,
+  ]
+    .filter(Boolean)
+    .join(' · ')
+  return (
+    <li className="flex items-start gap-1 px-1 py-0.5">
+      <button
+        type="button"
+        onClick={() => onSelect(water)}
+        className="hover:bg-water-50 dark:hover:bg-water-800 min-w-0 flex-1 rounded-lg px-2 py-1.5 text-left text-sm transition-colors"
+      >
+        <span className="font-semibold">{water.name}</span>
+        <span className="block text-xs text-slate-500 dark:text-slate-400">
+          {facts}
+        </span>
+      </button>
+      <a
+        href={directionsUrl(water.lat, water.lng)}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`${t('mapDirections')}: ${water.name}`}
+        title={t('mapDirections')}
+        className="hover:bg-water-50 dark:hover:bg-water-800 mt-1 shrink-0 rounded-lg px-2 py-1.5 text-sm transition-colors"
+      >
+        🧭
+      </a>
+    </li>
+  )
+}
+
+/** Berlin-style browsable list: one collapsible card per managing club. */
+function ClubList({
+  onSelect,
+}: {
+  onSelect: (water: BrandenburgWater) => void
+}) {
+  const { t } = usePrefs()
+  const groups = useMemo(() => {
+    const byClub = new Map<string, BrandenburgWater[]>()
+    for (const w of brandenburgWaters) {
+      const key = w.club ?? '—'
+      const list = byClub.get(key)
+      if (list) list.push(w)
+      else byClub.set(key, [w])
+    }
+    for (const list of byClub.values())
+      list.sort((a, b) => a.name.localeCompare(b.name, 'de'))
+    return [...byClub.entries()].sort((a, b) => a[0].localeCompare(b[0], 'de'))
+  }, [])
+
+  return (
+    <section className="mt-4">
+      <h2 className="text-lg font-bold">{t('mapClubsTitle')}</h2>
+      <p className="mb-2 text-xs text-slate-500 dark:text-slate-400">
+        {t('mapClubsHint')}
+      </p>
+      <div className="space-y-2">
+        {groups.map(([club, waters]) => (
+          <ClubGroup
+            key={club}
+            club={club}
+            waters={waters}
+            onSelect={onSelect}
+          />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function ClubGroup({
+  club,
+  waters,
+  onSelect,
+}: {
+  club: string
+  waters: BrandenburgWater[]
+  onSelect: (water: BrandenburgWater) => void
+}) {
+  // rows render only while expanded – keeps the 944-water DOM small
+  const [open, setOpen] = useState(false)
+  return (
+    <details
+      className="ring-water-100 dark:bg-water-900 dark:ring-water-800 rounded-2xl bg-white ring-1"
+      onToggle={(e) => setOpen(e.currentTarget.open)}
+    >
+      <summary className="cursor-pointer px-4 py-3 text-sm font-bold select-none">
+        {club}{' '}
+        <span className="font-normal text-slate-400 dark:text-slate-500">
+          ({waters.length})
+        </span>
+      </summary>
+      {open && (
+        <ul className="px-1 pb-1">
+          {waters.map((w) => (
+            <WaterRow key={w.id} water={w} onSelect={onSelect} />
+          ))}
+        </ul>
+      )}
+    </details>
   )
 }

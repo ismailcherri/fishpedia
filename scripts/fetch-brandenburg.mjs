@@ -27,6 +27,20 @@ const clean = (s) => {
   return t && t !== 'NULL' ? t : undefined
 }
 
+// LAVB spells clubs inconsistently ("KAV Templin" / "KAV Templin e.V." /
+// "Kreisanglerverband Templin e. V."); normalize so groups merge.
+const cleanClub = (s) => {
+  const t = clean(s)
+  return (
+    t &&
+    t
+      .replace(/\bKreisanglerverband\b/gi, 'KAV')
+      .replace(/\be\.?\s?V\.?\s*$/g, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+  )
+}
+
 const waters = raw
   .map((r) => {
     const lat = +parseFloat(r.lat).toFixed(5)
@@ -38,7 +52,7 @@ const waters = raw
       lat,
       lng,
       ...(ha > 0 && { ha }),
-      ...(clean(r.verein) && { club: clean(r.verein) }),
+      ...(cleanClub(r.verein) && { club: cleanClub(r.verein) }),
       ...(clean(r.bemerkung) && { note: clean(r.bemerkung) }),
     }
   })
