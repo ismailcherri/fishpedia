@@ -70,13 +70,36 @@ data file; that URL takes precedence over the bundled photo.
 
 ### Map of permitted waters (`/karte`)
 
+The map uses the **Google Maps JS API** via `@vis.gl/react-google-maps` and
+needs an API key at build time:
+
+```bash
+echo 'VITE_GOOGLE_MAPS_API_KEY=your-key' > .env.local   # gitignored
+```
+
+Create the key in the [Google Cloud Console](https://console.cloud.google.com/google/maps-apis/credentials)
+(project with billing enabled; the free tier easily covers a personal app) and
+**restrict it**: HTTP referrer restriction to your deployed origin (e.g.
+`https://<owner>.github.io/*`, plus `http://localhost:*/*` for development) and
+API restriction to _Maps JavaScript API_ only. The key is public by design in a
+client bundle — the restrictions are the protection. For the GitHub Pages
+deploy, store it as the `GOOGLE_MAPS_API_KEY` repository secret (the workflow
+exports it as `VITE_GOOGLE_MAPS_API_KEY`). Without a key the page still renders
+permit rules and the water list, plus a hint instead of the map.
+
 The waters of the Berlin Angelkarte live in `src/data/waters/berlinWaters.ts`
-(permit conditions in `src/data/waters/permit.ts` — no personal data there).
-The geometries are **hand-drawn approximations**. To replace one with the exact
-shape: run a query on [overpass-turbo.eu](https://overpass-turbo.eu) (e.g.
-`way["name"="Landwehrkanal"]({{bbox}}); out geom;`), export as GeoJSON, paste
-the feature's `geometry` into the water's entry and drop its `approximate`
-flag. Coordinates are `[lng, lat]`. Brandenburg waters can be added later as a
+(metadata verified against the printed permit; permit conditions in
+`src/data/waters/permit.ts` — no personal data there). Geometries are **real
+OpenStreetMap data** (© OpenStreetMap contributors, ODbL) in the generated
+`src/data/waters/geometries.ts`; permitted canal/river sections are clipped to
+the limits printed on the permit. Regenerate or adjust via the manifest in
+`scripts/fetch-waters.mjs`:
+
+```bash
+node scripts/fetch-waters.mjs   # re-queries Overpass, rewrites geometries.ts
+```
+
+Coordinates are `[lng, lat]`. Brandenburg waters can be added later as a
 second file following the same `WaterArea` shape.
 
 ⚠️ The app shows guidance, not legal advice: official publications and

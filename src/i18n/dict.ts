@@ -51,10 +51,17 @@ export const dict = {
     en: 'Canals & river sections',
   },
   mapLegendLake: { de: 'Seen', en: 'Lakes' },
-  mapApproximate: { de: 'ungefähre Grenzen', en: 'approximate boundaries' },
+  mapApproximate: {
+    de: 'Abgrenzung teils schematisch',
+    en: 'boundary partly schematic',
+  },
   mapDisclaimer: {
-    de: 'Grenzen sind grob eingezeichnet und ersetzen nicht den Erlaubnisschein oder die Gewässerordnung. Kartenkacheln benötigen Internet; die Gewässerliste funktioniert auch offline.',
-    en: 'Boundaries are drawn roughly and do not replace the permit or the water rules. Map tiles need internet; the water list also works offline.',
+    de: 'Die Karte ersetzt nicht den Erlaubnisschein oder die Gewässerordnung. Sie benötigt Internet; die Gewässerliste funktioniert auch offline. Gewässerdaten © OpenStreetMap-Mitwirkende (ODbL).',
+    en: 'The map does not replace the permit or the water rules. It needs internet; the water list also works offline. Water data © OpenStreetMap contributors (ODbL).',
+  },
+  mapKeyMissing: {
+    de: 'Google-Maps-API-Schlüssel fehlt. VITE_GOOGLE_MAPS_API_KEY in .env.local setzen und neu bauen – die Gewässerliste unten funktioniert trotzdem.',
+    en: 'Google Maps API key missing. Set VITE_GOOGLE_MAPS_API_KEY in .env.local and rebuild – the water list below still works.',
   },
   mapBrandenburgSoon: {
     de: 'Brandenburger Gewässer folgen später – die Karte zeigt die Berliner Angelkarte.',
