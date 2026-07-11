@@ -68,6 +68,7 @@ export const dict = {
     en: 'Brandenburg waters will follow – the map shows the Berlin permit.',
   },
   mapWaters: { de: 'Gewässer', en: 'Waters' },
+  mapDirections: { de: 'Route', en: 'Directions' },
   mapZoomHint: {
     de: 'Eintrag antippen, um das Gewässer auf der Karte zu zeigen.',
     en: 'Tap an entry to show the water on the map.',

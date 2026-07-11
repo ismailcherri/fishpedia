@@ -46,6 +46,22 @@ function boundsOf(
   return { west, south, east, north }
 }
 
+function destinationOf(geometry: WaterGeometry): google.maps.LatLngLiteral {
+  if (geometry.type === 'LineString') {
+    const mid =
+      geometry.coordinates[Math.floor(geometry.coordinates.length / 2)]
+    if (mid) return { lat: mid[1], lng: mid[0] }
+  }
+  const b = boundsOf([geometry])
+  return { lat: (b.north + b.south) / 2, lng: (b.east + b.west) / 2 }
+}
+
+/** Directions from the user's location; opens the Google Maps app/site. */
+function directionsUrl(geometry: WaterGeometry): string {
+  const { lat, lng } = destinationOf(geometry)
+  return `https://www.google.com/maps/dir/?api=1&destination=${lat.toFixed(5)},${lng.toFixed(5)}`
+}
+
 interface Selection {
   water: WaterArea
   anchor: google.maps.LatLngLiteral
@@ -135,6 +151,14 @@ function MapPageWithMap() {
                     ({t('mapApproximate')})
                   </p>
                 )}
+                <a
+                  href={directionsUrl(selected.water.geometry)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-water-600 mt-1 inline-block text-xs font-semibold"
+                >
+                  🧭 {t('mapDirections')}
+                </a>
               </div>
             </InfoWindow>
           )}
@@ -328,11 +352,11 @@ function WaterList({
       </h3>
       <ul>
         {waters.map((w) => (
-          <li key={w.id}>
+          <li key={w.id} className="flex items-start gap-1">
             <button
               type="button"
               onClick={() => onSelect(w)}
-              className="hover:bg-water-50 dark:hover:bg-water-800 w-full rounded-lg px-2 py-1.5 text-left text-sm transition-colors"
+              className="hover:bg-water-50 dark:hover:bg-water-800 min-w-0 flex-1 rounded-lg px-2 py-1.5 text-left text-sm transition-colors"
             >
               <span className="font-semibold">{w.name}</span>
               {w.note && (
@@ -346,6 +370,16 @@ function WaterList({
                 </span>
               )}
             </button>
+            <a
+              href={directionsUrl(w.geometry)}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${t('mapDirections')}: ${w.name}`}
+              title={t('mapDirections')}
+              className="hover:bg-water-50 dark:hover:bg-water-800 shrink-0 rounded-lg px-2 py-1.5 text-sm transition-colors"
+            >
+              🧭
+            </a>
           </li>
         ))}
       </ul>
