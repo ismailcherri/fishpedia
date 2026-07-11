@@ -63,9 +63,29 @@ export const dict = {
     de: 'Google-Maps-API-Schlüssel fehlt. VITE_GOOGLE_MAPS_API_KEY in .env.local setzen und neu bauen – die Gewässerliste unten funktioniert trotzdem.',
     en: 'Google Maps API key missing. Set VITE_GOOGLE_MAPS_API_KEY in .env.local and rebuild – the water list below still works.',
   },
-  mapBrandenburgSoon: {
-    de: 'Brandenburger Gewässer folgen später – die Karte zeigt die Berliner Angelkarte.',
-    en: 'Brandenburg waters will follow – the map shows the Berlin permit.',
+  mapTitleBb: {
+    de: 'Erlaubte Gewässer (Brandenburg)',
+    en: 'Permitted waters (Brandenburg)',
+  },
+  mapIntroBb: {
+    de: 'Gewässer des LAVB-Gewässerfonds (Angelkarte Brandenburg). Pin antippen für Details und Auflagen.',
+    en: 'Waters of the LAVB water fund (Brandenburg permit). Tap a pin for details and restrictions.',
+  },
+  mapDisclaimerBb: {
+    de: 'Die Karte ersetzt nicht den Erlaubnisschein oder die Gewässerordnung. Gewässerdaten © Landesanglerverband Brandenburg e.V. –',
+    en: 'The map does not replace the permit or the water rules. Water data © Landesanglerverband Brandenburg e.V. –',
+  },
+  mapSourceLavb: {
+    de: 'offizielle LAVB-Gewässerkarte',
+    en: 'official LAVB water map',
+  },
+  mapSearchHintBb: {
+    de: 'Suchen und Eintrag antippen, um das Gewässer auf der Karte zu zeigen.',
+    en: 'Search and tap an entry to show the water on the map.',
+  },
+  mapSearchPlaceholderBb: {
+    de: 'Gewässer suchen (Name oder Nummer) …',
+    en: 'Search waters (name or number)…',
   },
   mapWaters: { de: 'Gewässer', en: 'Waters' },
   mapDirections: { de: 'Route', en: 'Directions' },

@@ -99,8 +99,17 @@ the limits printed on the permit. Regenerate or adjust via the manifest in
 node scripts/fetch-waters.mjs   # re-queries Overpass, rewrites geometries.ts
 ```
 
-Coordinates are `[lng, lat]`. Brandenburg waters can be added later as a
-second file following the same `WaterArea` shape.
+Coordinates are `[lng, lat]`.
+
+With the region toggle on **Brandenburg**, the map shows the ~950 waters of
+the LAVB Gewässerfonds as clustered pins with a search box (data source & ©
+[LAVB Gewässerkarte](https://www.lavb.de/gwsmaps); points only, no
+polygons). Regenerate the generated
+`src/data/waters/brandenburgWaters.ts` with:
+
+```bash
+node scripts/fetch-brandenburg.mjs
+```
 
 ⚠️ The app shows guidance, not legal advice: official publications and
 water-specific rules (Gewässerordnung, Erlaubnisschein) always prevail.

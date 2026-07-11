@@ -7,9 +7,11 @@ import {
 } from '@vis.gl/react-google-maps'
 import type { ReactNode } from 'react'
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { BrandenburgPage } from '../components/BrandenburgWaters'
 import { berlinWaters } from '../data/waters/berlinWaters'
 import { permit } from '../data/waters/permit'
 import type { WaterArea, WaterGeometry } from '../data/waters/types'
+import { directionsUrl as directionsUrlTo } from '../lib/maps'
 import { usePrefs } from '../lib/prefs'
 
 export const Route = createFileRoute('/karte')({
@@ -56,10 +58,9 @@ function destinationOf(geometry: WaterGeometry): google.maps.LatLngLiteral {
   return { lat: (b.north + b.south) / 2, lng: (b.east + b.west) / 2 }
 }
 
-/** Directions from the user's location; opens the Google Maps app/site. */
 function directionsUrl(geometry: WaterGeometry): string {
   const { lat, lng } = destinationOf(geometry)
-  return `https://www.google.com/maps/dir/?api=1&destination=${lat.toFixed(5)},${lng.toFixed(5)}`
+  return directionsUrlTo(lat, lng)
 }
 
 interface Selection {
@@ -68,7 +69,11 @@ interface Selection {
 }
 
 function MapPage() {
-  const { t } = usePrefs()
+  const { region, t } = usePrefs()
+
+  if (region === 'brandenburg') {
+    return <BrandenburgPage apiKey={API_KEY} />
+  }
 
   if (!API_KEY) {
     return (
@@ -253,7 +258,7 @@ function PageFrame({
   map: ReactNode
   onSelectWater: (water: WaterArea) => void
 }) {
-  const { region, t, tx } = usePrefs()
+  const { t, tx } = usePrefs()
   const containerRef = useRef<HTMLDivElement>(null)
 
   const canals = berlinWaters.filter((w) => w.kind !== 'lake')
@@ -270,12 +275,6 @@ function PageFrame({
       <p className="mt-1 mb-3 text-sm text-slate-500 dark:text-slate-400">
         {t('mapIntro')}
       </p>
-
-      {region === 'brandenburg' && (
-        <p className="mb-3 rounded-xl bg-amber-50 p-3 text-sm text-amber-900 ring-1 ring-amber-200 dark:bg-amber-950/60 dark:text-amber-200 dark:ring-amber-900">
-          {t('mapBrandenburgSoon')}
-        </p>
-      )}
 
       <details className="ring-water-100 dark:bg-water-900 dark:ring-water-800 mb-3 rounded-2xl bg-white ring-1 open:pb-3">
         <summary className="cursor-pointer p-4 font-bold select-none">
