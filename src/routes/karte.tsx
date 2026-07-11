@@ -1,108 +1,244 @@
 import { createFileRoute } from '@tanstack/react-router'
-import type { LatLngBoundsExpression, Layer, Map as LeafletMap } from 'leaflet'
-import 'leaflet/dist/leaflet.css'
-import { useEffect, useRef } from 'react'
+import {
+  APIProvider,
+  Map as GoogleMap,
+  InfoWindow,
+  useMap,
+} from '@vis.gl/react-google-maps'
+import type { ReactNode } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { berlinWaters } from '../data/waters/berlinWaters'
 import { permit } from '../data/waters/permit'
-import type { WaterArea } from '../data/waters/types'
+import type { WaterArea, WaterGeometry } from '../data/waters/types'
 import { usePrefs } from '../lib/prefs'
 
 export const Route = createFileRoute('/karte')({
   component: MapPage,
 })
 
+const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string | undefined
+
 const CANAL_COLOR = '#256d84' // water-600
 const LAKE_FILL = '#48a3b8' // water-400
+const MAX_FOCUS_ZOOM = 15
 
-function toLatLngs(coords: [number, number][]): [number, number][] {
-  return coords.map(([lng, lat]) => [lat, lng])
+function coordsOf(geometry: WaterGeometry): [number, number][] {
+  return geometry.type === 'Polygon'
+    ? geometry.coordinates.flat()
+    : geometry.coordinates
+}
+
+function boundsOf(
+  geometries: WaterGeometry[]
+): google.maps.LatLngBoundsLiteral {
+  let west = Infinity
+  let south = Infinity
+  let east = -Infinity
+  let north = -Infinity
+  for (const geometry of geometries) {
+    for (const [lng, lat] of coordsOf(geometry)) {
+      west = Math.min(west, lng)
+      east = Math.max(east, lng)
+      south = Math.min(south, lat)
+      north = Math.max(north, lat)
+    }
+  }
+  return { west, south, east, north }
+}
+
+interface Selection {
+  water: WaterArea
+  anchor: google.maps.LatLngLiteral
 }
 
 function MapPage() {
-  const { lang, region, t, tx } = usePrefs()
-  const containerRef = useRef<HTMLDivElement>(null)
-  const mapRef = useRef<LeafletMap | null>(null)
-  const layersRef = useRef(
-    new Map<string, Layer & { getBounds: () => LatLngBoundsExpression }>()
+  const { t } = usePrefs()
+
+  if (!API_KEY) {
+    return (
+      <PageFrame
+        map={
+          <div className="flex h-full items-center justify-center p-6 text-center text-sm text-slate-500 dark:text-slate-400">
+            {t('mapKeyMissing')}
+          </div>
+        }
+        onSelectWater={() => {}}
+      />
+    )
+  }
+
+  return (
+    <APIProvider apiKey={API_KEY}>
+      <MapPageWithMap />
+    </APIProvider>
   )
+}
 
-  useEffect(() => {
-    let cancelled = false
-
-    async function initMap() {
-      const L = await import('leaflet')
-      const container = containerRef.current
-      if (cancelled || !container) return
-
-      const map = L.map(container, { scrollWheelZoom: false })
-      mapRef.current = map
-
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-      }).addTo(map)
-
-      const group = L.featureGroup()
-
-      for (const water of berlinWaters) {
-        const layer =
-          water.geometry.type === 'Polygon'
-            ? L.polygon(
-                water.geometry.coordinates.map(toLatLngs) as [
-                  number,
-                  number,
-                ][][],
-                {
-                  color: CANAL_COLOR,
-                  weight: 2.5,
-                  fillColor: LAKE_FILL,
-                  fillOpacity: 0.45,
-                  dashArray: water.approximate ? '6 4' : undefined,
-                }
-              )
-            : L.polyline(toLatLngs(water.geometry.coordinates), {
-                color: CANAL_COLOR,
-                weight: 7,
-                opacity: 0.75,
-                lineCap: 'round',
-                dashArray: water.approximate ? '10 8' : undefined,
-              })
-
-        const note = water.note ? `<br><em>${water.note[lang]}</em>` : ''
-        const approx = water.approximate
-          ? `<br><small>(${t('mapApproximate')})</small>`
-          : ''
-        layer.bindPopup(`<strong>${water.name}</strong>${note}${approx}`)
-        layer.addTo(group)
-        layersRef.current.set(water.id, layer)
-      }
-
-      group.addTo(map)
-      map.fitBounds(group.getBounds().pad(0.06))
-    }
-
-    initMap()
-
-    return () => {
-      cancelled = true
-      mapRef.current?.remove()
-      mapRef.current = null
-      layersRef.current.clear()
-    }
-  }, [lang, t])
+function MapPageWithMap() {
+  const { lang, t } = usePrefs()
+  const map = useMap()
+  const [selected, setSelected] = useState<Selection | null>(null)
 
   function focusWater(water: WaterArea) {
-    const map = mapRef.current
-    const layer = layersRef.current.get(water.id)
-    if (!map || !layer) return
-    map.flyToBounds(layer.getBounds(), { maxZoom: 14, duration: 0.6 })
-    if ('openPopup' in layer) (layer as { openPopup: () => void }).openPopup()
-    containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    if (!map) return
+    const bounds = boundsOf([water.geometry])
+    map.fitBounds(bounds, 40)
+    google.maps.event.addListenerOnce(map, 'idle', () => {
+      if ((map.getZoom() ?? 0) > MAX_FOCUS_ZOOM) map.setZoom(MAX_FOCUS_ZOOM)
+    })
+    setSelected({
+      water,
+      anchor: {
+        lat: (bounds.north + bounds.south) / 2,
+        lng: (bounds.east + bounds.west) / 2,
+      },
+    })
   }
+
+  const handleShapeClick = useCallback(
+    (water: WaterArea, anchor: google.maps.LatLngLiteral) =>
+      setSelected({ water, anchor }),
+    []
+  )
+
+  return (
+    <PageFrame
+      map={
+        <GoogleMap
+          defaultBounds={boundsOf(berlinWaters.map((w) => w.geometry))}
+          gestureHandling="cooperative"
+          streetViewControl={false}
+          fullscreenControl={false}
+          mapTypeControl
+        >
+          {berlinWaters.map((water) => (
+            <WaterShape
+              key={water.id}
+              water={water}
+              onClick={handleShapeClick}
+            />
+          ))}
+          {selected && (
+            <InfoWindow
+              position={selected.anchor}
+              onCloseClick={() => setSelected(null)}
+            >
+              <div className="max-w-56 text-slate-800">
+                <strong>{selected.water.name}</strong>
+                {selected.water.note && (
+                  <p className="mt-0.5 text-xs italic">
+                    {selected.water.note[lang]}
+                  </p>
+                )}
+                {selected.water.approximate && (
+                  <p className="mt-0.5 text-xs text-slate-500">
+                    ({t('mapApproximate')})
+                  </p>
+                )}
+              </div>
+            </InfoWindow>
+          )}
+        </GoogleMap>
+      }
+      onSelectWater={focusWater}
+    />
+  )
+}
+
+/** Draws one water as a native Google Maps polygon/polyline. */
+function WaterShape({
+  water,
+  onClick,
+}: {
+  water: WaterArea
+  onClick: (water: WaterArea, anchor: google.maps.LatLngLiteral) => void
+}) {
+  const map = useMap()
+
+  useEffect(() => {
+    if (!map) return
+    const toLatLng = ([lng, lat]: [number, number]) => ({ lat, lng })
+    const dash: google.maps.IconSequence[] = [
+      {
+        icon: { path: 'M 0,-1 0,1', strokeOpacity: 1, scale: 2.5 },
+        offset: '0',
+        repeat: '14px',
+      },
+    ]
+
+    const shapes: (google.maps.Polygon | google.maps.Polyline)[] = []
+    if (water.geometry.type === 'Polygon') {
+      const paths = water.geometry.coordinates.map((ring) => ring.map(toLatLng))
+      shapes.push(
+        new google.maps.Polygon({
+          map,
+          paths,
+          strokeColor: CANAL_COLOR,
+          strokeWeight: 2.5,
+          strokeOpacity: water.approximate ? 0 : 1,
+          fillColor: LAKE_FILL,
+          fillOpacity: 0.45,
+        })
+      )
+      if (water.approximate) {
+        // polygons cannot dash their outline – overlay dashed polylines
+        for (const ring of paths) {
+          shapes.push(
+            new google.maps.Polyline({
+              map,
+              path: ring,
+              strokeColor: CANAL_COLOR,
+              strokeOpacity: 0,
+              icons: dash,
+            })
+          )
+        }
+      }
+    } else {
+      shapes.push(
+        new google.maps.Polyline({
+          map,
+          path: water.geometry.coordinates.map(toLatLng),
+          strokeColor: CANAL_COLOR,
+          strokeWeight: 6,
+          strokeOpacity: water.approximate ? 0 : 0.75,
+          icons: water.approximate ? dash : undefined,
+        })
+      )
+    }
+
+    const listeners = shapes.map((shape) =>
+      shape.addListener('click', (e: google.maps.MapMouseEvent) => {
+        if (e.latLng) onClick(water, e.latLng.toJSON())
+      })
+    )
+    return () => {
+      for (const l of listeners) l.remove()
+      for (const s of shapes) s.setMap(null)
+    }
+  }, [map, water, onClick])
+
+  return null
+}
+
+/** Shared page layout around the map container (also used without a key). */
+function PageFrame({
+  map,
+  onSelectWater,
+}: {
+  map: ReactNode
+  onSelectWater: (water: WaterArea) => void
+}) {
+  const { region, t, tx } = usePrefs()
+  const containerRef = useRef<HTMLDivElement>(null)
 
   const canals = berlinWaters.filter((w) => w.kind !== 'lake')
   const lakes = berlinWaters.filter((w) => w.kind === 'lake')
+
+  function selectAndScroll(water: WaterArea) {
+    onSelectWater(water)
+    containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 
   return (
     <div className="mx-auto max-w-3xl">
@@ -142,7 +278,9 @@ function MapPage() {
         ref={containerRef}
         className="bg-water-100 ring-water-200 dark:bg-water-900 dark:ring-water-800 z-0 h-[55dvh] min-h-72 w-full overflow-hidden rounded-2xl ring-1"
         aria-label={t('mapTitle')}
-      />
+      >
+        {map}
+      </div>
       <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
         {t('mapDisclaimer')}
       </p>
@@ -157,13 +295,13 @@ function MapPage() {
             title={t('mapLegendCanal')}
             icon="〰️"
             waters={canals}
-            onSelect={focusWater}
+            onSelect={selectAndScroll}
           />
           <WaterList
             title={t('mapLegendLake')}
             icon="🔵"
             waters={lakes}
-            onSelect={focusWater}
+            onSelect={selectAndScroll}
           />
         </div>
       </section>
