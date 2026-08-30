@@ -18,8 +18,7 @@ export const Route = createRootRoute({
       { charSet: 'utf-8' },
       {
         name: 'viewport',
-        content:
-          'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover',
+        content: 'width=device-width, initial-scale=1, maximum-scale=1',
       },
       { title: 'Fishpedia - Angel-Begleiter für Berlin & Brandenburg' },
       {
@@ -28,7 +27,7 @@ export const Route = createRootRoute({
           'Fischarten in Berliner und Brandenburger Gewässern: Bestimmung, Schonzeiten und Mindestmaße auf einen Blick.',
       },
       { name: 'theme-color', content: '#1f404d' },
-      { name: 'apple-mobile-web-app-capable', content: 'yes' },
+      { name: 'mobile-web-app-capable', content: 'yes' },
       { name: 'application-name', content: 'Fishpedia' },
     ],
     links: [
