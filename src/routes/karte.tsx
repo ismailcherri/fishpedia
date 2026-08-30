@@ -8,6 +8,7 @@ import {
 import type { ReactNode } from 'react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { BrandenburgPage } from '../components/BrandenburgWaters'
+import { CurrentLocation } from '../components/CurrentLocation'
 import { berlinWaters } from '../data/waters/berlinWaters'
 import { permit } from '../data/waters/permit'
 import type { WaterArea, WaterGeometry } from '../data/waters/types'
@@ -139,6 +140,7 @@ function MapPageWithMap() {
               onClick={handleShapeClick}
             />
           ))}
+          <CurrentLocation />
           {selected && (
             <InfoWindow
               position={selected.anchor}

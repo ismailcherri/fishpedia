@@ -11,6 +11,7 @@ import type { BrandenburgWater } from '../data/waters/brandenburgWaters'
 import { brandenburgWaters } from '../data/waters/brandenburgWaters'
 import { directionsUrl } from '../lib/maps'
 import { usePrefs } from '../lib/prefs'
+import { CurrentLocation } from './CurrentLocation'
 
 const MAX_RESULTS = 30
 const FOCUS_ZOOM = 13
@@ -95,6 +96,7 @@ function BrandenburgWithMap({
           mapTypeControl
         >
           <ClusteredPins onSelect={setSelected} />
+          <CurrentLocation />
           {selected && (
             <InfoWindow
               position={{ lat: selected.lat, lng: selected.lng }}

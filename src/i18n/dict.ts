@@ -97,6 +97,27 @@ export const dict = {
   },
   mapWaters: { de: 'Gewässer', en: 'Waters' },
   mapDirections: { de: 'Route', en: 'Directions' },
+  mapLocation: { de: 'Mein Standort', en: 'My location' },
+  mapLocating: {
+    de: 'Standort wird ermittelt …',
+    en: 'Finding your location…',
+  },
+  mapLocationDenied: {
+    de: 'Standortzugriff wurde abgelehnt. Bitte in den Browser-Einstellungen erlauben.',
+    en: 'Location access was denied. Allow it in your browser settings.',
+  },
+  mapLocationUnavailable: {
+    de: 'Dein Standort konnte nicht bestimmt werden. Bitte erneut versuchen.',
+    en: 'Your location could not be determined. Please try again.',
+  },
+  mapLocationTimeout: {
+    de: 'Die Standortsuche hat zu lange gedauert. Bitte erneut versuchen.',
+    en: 'Finding your location took too long. Please try again.',
+  },
+  mapLocationUnsupported: {
+    de: 'Dieser Browser unterstützt keine Standortbestimmung.',
+    en: 'This browser does not support location services.',
+  },
   mapZoomHint: {
     de: 'Eintrag antippen, um das Gewässer auf der Karte zu zeigen.',
     en: 'Tap an entry to show the water on the map.',
