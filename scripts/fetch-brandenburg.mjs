@@ -17,6 +17,7 @@ const OUT_FILE = join(
 )
 
 const res = await fetch(API, {
+  signal: AbortSignal.timeout(30_000),
   headers: { 'User-Agent': 'fishpedia-water-fetch/1.0 (personal permit app)' },
 })
 if (!res.ok) throw new Error(`LAVB API: HTTP ${res.status}`)
@@ -54,6 +55,7 @@ const waters = raw
       ...(ha > 0 && { ha }),
       ...(cleanClub(r.verein) && { club: cleanClub(r.verein) }),
       ...(clean(r.bemerkung) && { note: clean(r.bemerkung) }),
+      ...(r.gbID === '10' && { contractWater: true }),
     }
   })
   .filter((w) => w.id && w.name)
@@ -96,6 +98,8 @@ export interface BrandenburgWater {
   club?: string
   /** restrictions as published (German) */
   note?: string
+  /** requires a valid LAVB full-payer stamp or the specified extra permit */
+  contractWater?: true
 }
 
 export const brandenburgWaters: BrandenburgWater[] = [

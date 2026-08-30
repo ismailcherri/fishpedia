@@ -12,7 +12,7 @@ interactive map at https://www.lavb.de/gwsmaps.
 
 ## Findings
 
-The LAVB map loads its pins from `https://gws.lavb.de/api/gm_all`: 944
+The LAVB map loads its pins from `https://gws.lavb.de/api/gm_all`: 947
 waters with LAVB water number (`id`, e.g. "P 07-02"), full name including
 the permitted section, lat/lng, size (ha), managing club (`verein`) and
 restriction notes (`bemerkung`). No CORS header, so browser-side fetching
@@ -34,7 +34,7 @@ offline.
   🧭 directions link.
 - **Search instead of list:** a search input filters by name or water
   number; the first 30 matches render as rows (fly-to + directions) with a
-  "n of 944" count. No static 944-row list.
+  "n of 947" count. No static 947-row list.
 - **Housekeeping:** the "Brandenburger Gewässer folgen später" notice is
   removed; the Berlin permit-rules card renders only for region = Berlin;
   a source line links to lavb.de/gwsmaps; the map disclaimer credits LAVB

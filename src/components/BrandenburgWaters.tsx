@@ -136,21 +136,30 @@ function MapContainer({
 function Footnotes() {
   const { t } = usePrefs()
   return (
-    <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-      {t('mapDisclaimerBb')}{' '}
-      <a
-        href="https://www.lavb.de/gwsmaps"
-        target="_blank"
-        rel="noreferrer"
-        className="text-water-600 dark:text-water-300 font-semibold"
-      >
-        {t('mapSourceLavb')}
-      </a>
-    </p>
+    <div className="mt-2 space-y-1 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+      <p>
+        {t('mapDisclaimerBb')}{' '}
+        <a
+          href="https://www.lavb.de/gwsmaps"
+          target="_blank"
+          rel="noreferrer"
+          className="text-water-600 dark:text-water-300 font-semibold"
+        >
+          {t('mapSourceLavb')}
+        </a>
+      </p>
+      <p className="flex items-start gap-1.5">
+        <span
+          aria-hidden
+          className="mt-1 size-2.5 shrink-0 rounded-full bg-yellow-400 ring-1 ring-yellow-600"
+        />
+        <span>{t('mapContractWaterHintBb')}</span>
+      </p>
+    </div>
   )
 }
 
-/** All 944 waters as clustered markers (classic Marker + MarkerClusterer). */
+/** All published waters as clustered markers (classic Marker + MarkerClusterer). */
 function ClusteredPins({
   onSelect,
 }: {
@@ -170,6 +179,16 @@ function ClusteredPins({
         const marker = new google.maps.Marker({
           position: { lat: water.lat, lng: water.lng },
           title: `${water.id} ${water.name}`,
+          icon: water.contractWater
+            ? {
+                path: google.maps.SymbolPath.CIRCLE,
+                scale: 8,
+                fillColor: '#facc15',
+                fillOpacity: 1,
+                strokeColor: '#a16207',
+                strokeWeight: 1,
+              }
+            : undefined,
         })
         marker.addListener('click', () => onSelect(water))
         return marker
@@ -196,6 +215,11 @@ function WaterDetails({ water }: { water: BrandenburgWater }) {
     <div className="max-w-64 text-slate-800">
       <strong>{water.name}</strong>
       <p className="mt-0.5 text-xs text-slate-500">{facts}</p>
+      {water.contractWater && (
+        <p className="mt-1 text-xs font-semibold text-amber-700">
+          {t('mapContractWaterBb')}
+        </p>
+      )}
       {water.note && <p className="mt-0.5 text-xs italic">{water.note}</p>}
       <a
         href={directionsUrl(water.lat, water.lng)}
@@ -266,6 +290,7 @@ function WaterRow({
     water.id,
     water.ha ? `${water.ha} ha` : null,
     showClub ? water.club : null,
+    water.contractWater ? t('mapContractWaterBb') : null,
   ]
     .filter(Boolean)
     .join(' · ')
@@ -344,7 +369,7 @@ function ClubGroup({
   waters: BrandenburgWater[]
   onSelect: (water: BrandenburgWater) => void
 }) {
-  // rows render only while expanded – keeps the 944-water DOM small
+  // Rows render only while expanded to keep the full water-list DOM small.
   const [open, setOpen] = useState(false)
   return (
     <details

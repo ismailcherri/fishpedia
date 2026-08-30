@@ -72,8 +72,8 @@ export const dict = {
     en: 'Permitted waters (Brandenburg)',
   },
   mapIntroBb: {
-    de: 'Gewässer des LAVB-Gewässerfonds (Angelkarte Brandenburg). Pin antippen für Details und Auflagen.',
-    en: 'Waters of the LAVB water fund (Brandenburg permit). Tap a pin for details and restrictions.',
+    de: 'Verbands- und Verbandsvertragsgewässer der LAVB-Karte. Pin antippen für Details und Auflagen.',
+    en: 'Association and association contract waters on the LAVB map. Tap a pin for details and restrictions.',
   },
   mapDisclaimerBb: {
     de: 'Die Karte ersetzt nicht den Erlaubnisschein oder die Gewässerordnung. Gewässerdaten © Landesanglerverband Brandenburg e.V. –',
@@ -82,6 +82,14 @@ export const dict = {
   mapSourceLavb: {
     de: 'offizielle LAVB-Gewässerkarte',
     en: 'official LAVB water map',
+  },
+  mapContractWaterBb: {
+    de: 'Verbandsvertragsgewässer',
+    en: 'Association contract water',
+  },
+  mapContractWaterHintBb: {
+    de: 'Gelbe Punkte sind Verbandsvertragsgewässer. Sie erfordern eine gültige LAVB-Vollzahlermarke oder die im Eintrag genannte Zusatzangelkarte (JAK).',
+    en: 'Yellow points are association contract waters. They require a valid LAVB full-payer stamp or the additional permit (JAK) specified in the entry.',
   },
   mapSearchHintBb: {
     de: 'Suchen und Eintrag antippen, um das Gewässer auf der Karte zu zeigen.',
