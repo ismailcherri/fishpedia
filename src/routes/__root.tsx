@@ -67,6 +67,22 @@ function RootComponent() {
         .register(`${import.meta.env.BASE_URL}sw.js`)
         .catch(() => {})
     }
+
+    const preventPinch = (event: Event) => event.preventDefault()
+    const preventMultiTouch = (event: TouchEvent) => {
+      if (event.touches.length > 1) event.preventDefault()
+    }
+    const options: AddEventListenerOptions = { passive: false, capture: true }
+
+    document.addEventListener('gesturestart', preventPinch, options)
+    document.addEventListener('gesturechange', preventPinch, options)
+    document.addEventListener('touchmove', preventMultiTouch, options)
+
+    return () => {
+      document.removeEventListener('gesturestart', preventPinch, true)
+      document.removeEventListener('gesturechange', preventPinch, true)
+      document.removeEventListener('touchmove', preventMultiTouch, true)
+    }
   }, [router])
 
   return (
