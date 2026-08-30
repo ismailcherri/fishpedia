@@ -88,8 +88,10 @@ exports it as `VITE_GOOGLE_MAPS_API_KEY`). Without a key the page still renders
 permit rules and the water list, plus a hint instead of the map.
 
 The waters of the Berlin Angelkarte live in `src/data/waters/berlinWaters.ts`
-(metadata verified against the printed permit; permit conditions in
-`src/data/waters/permit.ts` — no personal data there). Geometries are **real
+(water numbers, sections and restrictions verified against the official
+[LAV Berlin register](https://landesanglerverband.berlin/angelgewaesser/);
+permit conditions in `src/data/waters/permit.ts` — no personal data there).
+Geometries are **real
 OpenStreetMap data** (© OpenStreetMap contributors, ODbL) in the generated
 `src/data/waters/geometries.ts`; permitted canal/river sections are clipped to
 the limits printed on the permit. Regenerate or adjust via the manifest in

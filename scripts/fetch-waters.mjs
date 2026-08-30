@@ -2,13 +2,12 @@
  * Regenerates src/data/waters/geometries.ts from OpenStreetMap data
  * (Overpass API). Run: node scripts/fetch-waters.mjs
  *
- * Each manifest entry pins a water from the DAV Berlin Angelkarte to
+ * Each manifest entry pins a water from the LAV Berlin register to
  * concrete OSM objects. Line waters are extracted as the shortest path
  * through the water's way network between two pinned endpoints, so
- * permitted sections (e.g. "Schleuse Plötzensee bis Humboldthafen") come
- * out clipped exactly to the printed limits. Identifications were verified
- * against the DAV Berlin water register (landesanglerverband.berlin,
- * water numbers noted below) in July 2026.
+ * permitted sections come out clipped to the published limits.
+ * Identifications were verified against
+ * landesanglerverband.berlin/angelgewaesser/ in August 2026.
  *
  * Data © OpenStreetMap contributors, ODbL — openstreetmap.org/copyright.
  */
@@ -24,6 +23,7 @@ const OUT_FILE = join(
 
 const ENDPOINTS = [
   'https://overpass-api.de/api/interpreter',
+  'https://overpass.osm.ch/api/interpreter',
   'https://overpass.kumi.systems/api/interpreter',
   'https://overpass.private.coffee/api/interpreter',
 ]
@@ -57,12 +57,20 @@ const manifest = [
     to: [13.342, 52.538],
   },
   {
-    // permit: zwischen Schleuse Plötzensee und Humboldthafen
+    // B 10-206: Humboldthafen to the Westhafen entrance
     id: 'berlin-spandauer-schifffahrtskanal',
     kind: 'line',
     query: `way["waterway"]["name"="Berlin-Spandauer Schifffahrtskanal"](52.51,13.30,52.56,13.39);`,
-    from: [13.3236, 52.5434],
+    from: [13.33495, 52.54057],
     to: [13.3723, 52.5251],
+  },
+  {
+    // B 10-207: Westhafen to Plötzensee lock
+    id: 'hohenzollernkanal',
+    kind: 'line',
+    query: `relation(411462)->.rel;way(r.rel)(52.53,13.30,52.56,13.36);`,
+    from: [13.33495, 52.54057],
+    to: [13.3236, 52.5434],
   },
   {
     // permit: von der Lohmühlenbrücke bis Britzer Hafen (≈ whole canal)
@@ -105,21 +113,19 @@ const manifest = [
     to: [13.5887, 52.4415],
   },
   {
-    // permit: vom Einlauf Britzer Zweigkanal bis Mühlendammschleuse;
-    // waterway relation "Spree" (some sections are unnamed member ways)
+    // B 10-201 also includes the Kupfergraben/Spreekanal arm
     id: 'spree',
     kind: 'line',
     query: `relation(390274)->.rel;way(r.rel)(52.45,13.38,52.53,13.50);`,
     from: [13.475, 52.473],
     to: [13.4073, 52.514],
-  },
-  {
-    // Spree arm at Museum Island; OSM name: Spreekanal
-    id: 'kupfergraben',
-    kind: 'line',
-    query: `way["waterway"]["name"="Spreekanal"](52.50,13.38,52.53,13.42);`,
-    from: [13.409, 52.5115],
-    to: [13.394, 52.523],
+    additionalLines: [
+      {
+        query: `way["waterway"]["name"="Spreekanal"](52.50,13.38,52.53,13.42);`,
+        from: [13.409, 52.5115],
+        to: [13.394, 52.523],
+      },
+    ],
   },
   { id: 'rummelsburger-see', kind: 'polygon', ways: [10295991] },
   { id: 'weisser-see', kind: 'polygon', ways: [59454293] },
@@ -148,7 +154,7 @@ const manifest = [
   },
   { id: 'koerner-see', kind: 'polygon', ways: [25928007] }, // DAV B 04-104
   { id: 'grabensprung', kind: 'polygon', ways: [4699209] }, // DAV B 05-101
-  { id: 'griebnitzsee', kind: 'polygon', ways: [71375387] },
+  { id: 'wuhlebecken', kind: 'polygon', ways: [43869895] }, // DAV B 05-102
 ]
 
 // Optional response cache (WATER_CACHE_DIR) so interrupted runs resume
@@ -161,11 +167,12 @@ async function overpass(query, cacheId) {
   if (cacheFile && existsSync(cacheFile))
     return JSON.parse(readFileSync(cacheFile, 'utf8'))
   const data = `[out:json][timeout:90];(${query});out geom;`
-  for (let attempt = 0; attempt < 6; attempt++) {
+  for (let attempt = 0; attempt < ENDPOINTS.length * 2; attempt++) {
     const endpoint = ENDPOINTS[attempt % ENDPOINTS.length]
     try {
       const res = await fetch(endpoint, {
         method: 'POST',
+        signal: AbortSignal.timeout(30_000),
         headers: {
           'User-Agent': 'fishpedia-water-fetch/1.0 (personal permit app)',
           Accept: 'application/json',
@@ -174,9 +181,12 @@ async function overpass(query, cacheId) {
       })
       if (res.ok) {
         const elements = (await res.json()).elements
-        if (cacheFile && elements.length > 0)
-          writeFileSync(cacheFile, JSON.stringify(elements))
-        return elements
+        if (elements.length > 0) {
+          if (cacheFile) writeFileSync(cacheFile, JSON.stringify(elements))
+          return elements
+        }
+        console.error(`  empty response from ${endpoint}, retrying…`)
+        continue
       }
       console.error(`  HTTP ${res.status} from ${endpoint}, retrying…`)
     } catch (err) {
@@ -308,19 +318,25 @@ const results = {}
 for (const entry of manifest) {
   process.stdout.write(`${entry.id} … `)
   if (entry.kind === 'line') {
-    const elements = await overpass(entry.query, entry.id)
-    const ways = elements
-      .filter((e) => e.type === 'way' && e.geometry)
-      .map((e) => toCoords(e.geometry))
-    if (ways.length === 0) throw new Error(`${entry.id}: no ways found`)
-    const line = simplify(pathBetween(ways, entry.from, entry.to), 150)
-    if (line.length < 4) throw new Error(`${entry.id}: degenerate line`)
-    checkBerlinArea(entry.id, line)
-    results[entry.id] = {
-      type: 'LineString',
-      coordinates: line.map(([a, b]) => [round(a), round(b)]),
+    const sections = [entry, ...(entry.additionalLines ?? [])]
+    const lines = []
+    for (const [index, section] of sections.entries()) {
+      const cacheId = index === 0 ? entry.id : `${entry.id}-${index}`
+      const elements = await overpass(section.query, cacheId)
+      const ways = elements
+        .filter((e) => e.type === 'way' && e.geometry)
+        .map((e) => toCoords(e.geometry))
+      if (ways.length === 0) throw new Error(`${cacheId}: no ways found`)
+      const line = simplify(pathBetween(ways, section.from, section.to), 150)
+      if (line.length < 4) throw new Error(`${cacheId}: degenerate line`)
+      checkBerlinArea(cacheId, line)
+      lines.push(line.map(([a, b]) => [round(a), round(b)]))
     }
-    console.log(`line, ${line.length} pts`)
+    results[entry.id] =
+      lines.length === 1
+        ? { type: 'LineString', coordinates: lines[0] }
+        : { type: 'MultiLineString', coordinates: lines }
+    console.log(`line, ${lines.reduce((n, line) => n + line.length, 0)} pts`)
   } else {
     const parts = [
       ...(entry.ways ?? []).map((id) => `way(${id});`),

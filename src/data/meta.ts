@@ -14,6 +14,13 @@ export const SOURCES = [
   },
   {
     name: {
+      de: 'LAV Berlin – offizielles Gewässerverzeichnis',
+      en: 'LAV Berlin – official water register',
+    },
+    url: 'https://landesanglerverband.berlin/angelgewaesser/',
+  },
+  {
+    name: {
       de: 'Fischereiordnung des Landes Brandenburg (BbgFischO), Anlage 1',
       en: 'Brandenburg Fisheries Ordinance (BbgFischO), Annex 1',
     },

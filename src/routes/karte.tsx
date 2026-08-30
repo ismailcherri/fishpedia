@@ -26,9 +26,9 @@ const LAKE_FILL = '#48a3b8' // water-400
 const MAX_FOCUS_ZOOM = 15
 
 function coordsOf(geometry: WaterGeometry): [number, number][] {
-  return geometry.type === 'Polygon'
-    ? geometry.coordinates.flat()
-    : geometry.coordinates
+  return geometry.type === 'LineString'
+    ? geometry.coordinates
+    : geometry.coordinates.flat()
 }
 
 function boundsOf(
@@ -50,10 +50,15 @@ function boundsOf(
 }
 
 function destinationOf(geometry: WaterGeometry): google.maps.LatLngLiteral {
-  if (geometry.type === 'LineString') {
-    const mid =
-      geometry.coordinates[Math.floor(geometry.coordinates.length / 2)]
-    if (mid) return { lat: mid[1], lng: mid[0] }
+  if (geometry.type !== 'Polygon') {
+    const line =
+      geometry.type === 'LineString'
+        ? geometry.coordinates
+        : geometry.coordinates[0]
+    if (line) {
+      const mid = line[Math.floor(line.length / 2)]
+      if (mid) return { lat: mid[1], lng: mid[0] }
+    }
   }
   const b = boundsOf([geometry])
   return { lat: (b.north + b.south) / 2, lng: (b.east + b.west) / 2 }
@@ -148,6 +153,11 @@ function MapPageWithMap() {
             >
               <div className="max-w-56 text-slate-800">
                 <strong>{selected.water.name}</strong>
+                {selected.water.permitId && (
+                  <p className="mt-0.5 text-xs text-slate-500">
+                    {selected.water.permitId}
+                  </p>
+                )}
                 {selected.water.note && (
                   <p className="mt-0.5 text-xs italic">
                     {selected.water.note[lang]}
@@ -226,16 +236,22 @@ function WaterShape({
         }
       }
     } else {
-      shapes.push(
-        new google.maps.Polyline({
-          map,
-          path: water.geometry.coordinates.map(toLatLng),
-          strokeColor: CANAL_COLOR,
-          strokeWeight: 6,
-          strokeOpacity: water.approximate ? 0 : 0.75,
-          icons: water.approximate ? dash : undefined,
-        })
-      )
+      const lines =
+        water.geometry.type === 'LineString'
+          ? [water.geometry.coordinates]
+          : water.geometry.coordinates
+      for (const line of lines) {
+        shapes.push(
+          new google.maps.Polyline({
+            map,
+            path: line.map(toLatLng),
+            strokeColor: CANAL_COLOR,
+            strokeWeight: 6,
+            strokeOpacity: water.approximate ? 0 : 0.75,
+            icons: water.approximate ? dash : undefined,
+          })
+        )
+      }
     }
 
     const listeners = shapes.map((shape) =>
@@ -307,7 +323,15 @@ function PageFrame({
         {map}
       </div>
       <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-        {t('mapDisclaimer')}
+        {t('mapDisclaimer')}{' '}
+        <a
+          href="https://landesanglerverband.berlin/angelgewaesser/"
+          target="_blank"
+          rel="noreferrer"
+          className="text-water-600 dark:text-water-300 font-semibold"
+        >
+          {t('mapSourceBerlin')}
+        </a>
       </p>
 
       <section className="mt-4">
@@ -360,6 +384,11 @@ function WaterList({
               className="hover:bg-water-50 dark:hover:bg-water-800 min-w-0 flex-1 rounded-lg px-2 py-1.5 text-left text-sm transition-colors"
             >
               <span className="font-semibold">{w.name}</span>
+              {w.permitId && (
+                <span className="block text-xs text-slate-500 dark:text-slate-400">
+                  {w.permitId}
+                </span>
+              )}
               {w.note && (
                 <span className="block text-xs text-slate-500 dark:text-slate-400">
                   {tx(w.note)}

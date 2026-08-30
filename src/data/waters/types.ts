@@ -6,6 +6,11 @@ export interface LineStringGeometry {
   coordinates: [number, number][]
 }
 
+export interface MultiLineStringGeometry {
+  type: 'MultiLineString'
+  coordinates: [number, number][][]
+}
+
 export interface PolygonGeometry {
   type: 'Polygon'
   /**
@@ -15,10 +20,13 @@ export interface PolygonGeometry {
   coordinates: [number, number][][]
 }
 
-export type WaterGeometry = LineStringGeometry | PolygonGeometry
+export type WaterGeometry =
+  LineStringGeometry | MultiLineStringGeometry | PolygonGeometry
 
 export interface WaterArea {
   id: string
+  /** official water number in the permit register, e.g. "B 10-201" */
+  permitId?: string
   /** display name as printed on the permit */
   name: string
   kind: 'lake' | 'canal' | 'river'

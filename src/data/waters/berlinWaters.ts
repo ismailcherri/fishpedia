@@ -2,72 +2,98 @@ import { waterGeometries } from './geometries'
 import type { WaterArea } from './types'
 
 /**
- * Waters permitted by the DAV Berlin Fischereierlaubnisvertrag (Angelkarte).
- * Names, sections and restrictions verified against the printed permit.
+ * Waters in the official LAV Berlin register at
+ * https://landesanglerverband.berlin/angelgewaesser/.
+ * Names, water numbers, sections and restrictions verified in August 2026.
  *
  * Geometries come from OpenStreetMap data, clipped to the permitted
- * sections printed on the permit; waters were identified against the DAV
- * Berlin water register (landesanglerverband.berlin). Regenerate with:
+ * sections in the register. Regenerate with:
  *   node scripts/fetch-waters.mjs
  */
 const meta: Omit<WaterArea, 'geometry'>[] = [
   {
     id: 'landwehrkanal',
+    permitId: 'B 10-209',
     name: 'Landwehrkanal',
     kind: 'canal',
+    note: {
+      de: 'Von Oberspree (Oberschleuse) bis Stadtspree, einschließlich der Umflutgräben an beiden Schleusen und Urbanhafen.',
+      en: 'From Oberspree (upper lock) to Stadtspree, including the bypass channels at both locks and Urbanhafen.',
+    },
   },
   {
     id: 'verbindungskanal',
-    name: 'Verbindungskanal',
+    permitId: 'B 10-208',
+    name: 'Charlottenburger Verbindungskanal',
     kind: 'canal',
     note: {
-      de: 'Charlottenburger Verbindungskanal (Spree – Westhafenkanal).',
-      en: 'Charlottenburg connecting canal (Spree – Westhafen canal).',
+      de: 'Vom Westhafenkanal bis zur Spree.',
+      en: 'From the Westhafen canal to the Spree.',
     },
   },
   {
     id: 'westhafenkanal',
+    permitId: 'B 10-211',
     name: 'Westhafenkanal',
     kind: 'canal',
+    note: {
+      de: 'Vom Westhafen bis zur Einmündung in die Spree – ohne Westhafen.',
+      en: 'From Westhafen to the Spree confluence – excluding Westhafen.',
+    },
   },
   {
     id: 'berlin-spandauer-schifffahrtskanal',
+    permitId: 'B 10-206',
     name: 'Berlin-Spandauer Schifffahrtskanal',
     kind: 'canal',
     note: {
-      de: 'Zwischen Schleuse Plötzensee und Humboldthafen.',
-      en: 'Between Plötzensee lock and Humboldthafen.',
+      de: 'Vom Humboldthafen bis zur Mündung Westhafen, einschließlich Nordhafen.',
+      en: 'From Humboldthafen to the Westhafen entrance, including Nordhafen.',
+    },
+  },
+  {
+    id: 'hohenzollernkanal',
+    permitId: 'B 10-207',
+    name: 'Hohenzollernkanal',
+    kind: 'canal',
+    note: {
+      de: 'Vom Westhafen bis zur Schleuse Plötzensee, einschließlich des Kolkes.',
+      en: 'From Westhafen to Plötzensee lock, including the lock pool.',
     },
   },
   {
     id: 'neukoellner-schifffahrtskanal',
-    name: 'Neuköllner Schifffahrtskanal',
+    permitId: 'B 10-210',
+    name: 'Neuköllner Schiffahrtskanal',
     kind: 'canal',
     note: {
-      de: 'Von der Lohmühlenbrücke bis Britzer Hafen.',
-      en: 'From Lohmühlen bridge to Britz harbour.',
+      de: 'Vom Britzer Hafensteg bis zur Lohmühlenbrücke.',
+      en: 'From the Britzer Hafen footbridge to Lohmühlenbrücke.',
     },
   },
   {
     id: 'britzer-zweigkanal',
+    permitId: 'B 10-202',
     name: 'Britzer Zweigkanal',
     kind: 'canal',
     note: {
-      de: 'Auch Britzer Verbindungskanal (Teltowkanal – Spree).',
-      en: 'Also known as Britzer Verbindungskanal (Teltow canal – Spree).',
+      de: 'Ab Spree bis zum Britzer Hafen.',
+      en: 'From the Spree to Britzer Hafen.',
     },
   },
   {
     id: 'gosener-kanal',
+    permitId: 'B 10-204',
     name: 'Gosener Kanal',
     kind: 'canal',
     note: {
-      de: 'Zwischen Seddinsee und Dämeritzsee.',
-      en: 'Between Seddinsee and Dämeritzsee.',
+      de: 'Vom Dämnitzsee bis Seddinsee.',
+      en: 'From Dämnitzsee to Seddinsee.',
     },
   },
   {
     id: 'oder-spree-kanal',
+    permitId: 'B 10-205',
     name: 'Oder-Spree-Kanal',
     kind: 'canal',
     note: {
@@ -77,56 +103,49 @@ const meta: Omit<WaterArea, 'geometry'>[] = [
   },
   {
     id: 'wuhle',
-    name: 'Wuhle / Wuhlebecken',
+    permitId: 'B 10-203',
+    name: 'Wuhle-Strom',
     kind: 'river',
     note: {
-      de: 'Von der B1 bis zur Spree.',
-      en: 'From the B1 road to the Spree.',
+      de: 'Von der B1/B5 bis zur Mündung in die Spree.',
+      en: 'From the B1/B5 road to the Spree confluence.',
     },
   },
   {
     id: 'spree',
-    name: 'Spree',
+    permitId: 'B 10-201',
+    name: 'Spree mit Kupfergraben',
     kind: 'river',
     note: {
-      de: 'Vom Einlauf Britzer Zweigkanal bis Mühlendammschleuse (inkl. Kupfergraben und Rummelsburger See).',
-      en: 'From the Britzer Zweigkanal inlet to Mühlendamm lock (incl. Kupfergraben and Rummelsburger See).',
-    },
-  },
-  {
-    id: 'kupfergraben',
-    name: 'Kupfergraben',
-    kind: 'river',
-    note: {
-      de: 'Spreearm an der Museumsinsel (gehört zur Spree-Strecke).',
-      en: 'Spree arm at Museum Island (part of the Spree section).',
+      de: 'Vom Einlauf Britzer Zweigkanal bis zur Mühlendamm-Schleuse.',
+      en: 'From the Britzer Zweigkanal inlet to Mühlendamm lock.',
     },
   },
   {
     id: 'rummelsburger-see',
+    permitId: 'B 06-101',
     name: 'Rummelsburger See',
     kind: 'lake',
-    note: {
-      de: 'Bucht der Spree (gehört zur Spree-Strecke).',
-      en: 'Bay of the Spree (part of the Spree section).',
-    },
   },
   {
     id: 'weisser-see',
+    permitId: 'B 01-101',
     name: 'Weißer See',
     kind: 'lake',
     note: {
-      de: 'Parkgewässer – nur Bootsangeln!',
-      en: 'Park water – boat fishing only!',
+      de: 'Parkgewässer – Uferangeln verboten!',
+      en: 'Park water – bank fishing prohibited!',
     },
   },
   {
     id: 'malchower-see',
+    permitId: 'B 02-101',
     name: 'Malchower See',
     kind: 'lake',
   },
   {
     id: 'orankesee',
+    permitId: 'B 02-102',
     name: 'Oranke See',
     kind: 'lake',
     note: {
@@ -136,15 +155,17 @@ const meta: Omit<WaterArea, 'geometry'>[] = [
   },
   {
     id: 'obersee',
+    permitId: 'B 02-103',
     name: 'Obersee',
     kind: 'lake',
     note: {
-      de: 'Uferangeln auf der Grundstücksseite.',
-      en: 'Bank fishing on the property side.',
+      de: 'Parkgewässer – nur die Grundstücksseite ist beangelbar!',
+      en: 'Park water – fishing is allowed only from the property side!',
     },
   },
   {
     id: 'bucher-teiche',
+    permitId: 'B 03-102',
     name: 'Bucher Teich I–II',
     kind: 'lake',
     note: {
@@ -154,6 +175,7 @@ const meta: Omit<WaterArea, 'geometry'>[] = [
   },
   {
     id: 'butzer-see',
+    permitId: 'B 04-101',
     name: 'Butzer See',
     kind: 'lake',
     note: {
@@ -163,6 +185,7 @@ const meta: Omit<WaterArea, 'geometry'>[] = [
   },
   {
     id: 'habermannsee',
+    permitId: 'B 04-102',
     name: 'Habermann See',
     kind: 'lake',
     note: {
@@ -172,6 +195,7 @@ const meta: Omit<WaterArea, 'geometry'>[] = [
   },
   {
     id: 'kiessee',
+    permitId: 'B 04-103',
     name: 'Kiessee',
     kind: 'lake',
     approximate: true,
@@ -182,6 +206,7 @@ const meta: Omit<WaterArea, 'geometry'>[] = [
   },
   {
     id: 'koerner-see',
+    permitId: 'B 04-104',
     name: 'Körner See',
     kind: 'lake',
     note: {
@@ -191,6 +216,7 @@ const meta: Omit<WaterArea, 'geometry'>[] = [
   },
   {
     id: 'grabensprung',
+    permitId: 'B 05-101',
     name: 'Grabensprung',
     kind: 'lake',
     note: {
@@ -199,9 +225,14 @@ const meta: Omit<WaterArea, 'geometry'>[] = [
     },
   },
   {
-    id: 'griebnitzsee',
-    name: 'Griebnitzsee',
+    id: 'wuhlebecken',
+    permitId: 'B 05-102',
+    name: 'Wuhlebecken',
     kind: 'lake',
+    note: {
+      de: 'An der Wuhle in Biesdorf.',
+      en: 'On the Wuhle in Biesdorf.',
+    },
   },
 ]
 

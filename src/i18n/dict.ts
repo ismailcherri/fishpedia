@@ -59,6 +59,10 @@ export const dict = {
     de: 'Die Karte ersetzt nicht den Erlaubnisschein oder die Gewässerordnung. Sie benötigt Internet; die Gewässerliste funktioniert auch offline. Gewässerdaten © OpenStreetMap-Mitwirkende (ODbL).',
     en: 'The map does not replace the permit or the water rules. It needs internet; the water list also works offline. Water data © OpenStreetMap contributors (ODbL).',
   },
+  mapSourceBerlin: {
+    de: 'Offizielles LAV-Berlin-Gewässerverzeichnis',
+    en: 'Official LAV Berlin water register',
+  },
   mapKeyMissing: {
     de: 'Google-Maps-API-Schlüssel fehlt. VITE_GOOGLE_MAPS_API_KEY in .env.local setzen und neu bauen – die Gewässerliste unten funktioniert trotzdem.',
     en: 'Google Maps API key missing. Set VITE_GOOGLE_MAPS_API_KEY in .env.local and rebuild – the water list below still works.',
