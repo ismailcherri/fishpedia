@@ -108,6 +108,19 @@ export const dict = {
     en: 'Expand a club and tap an entry to show the water on the map.',
   },
   mapWaters: { de: 'Gewässer', en: 'Waters' },
+  waterMoreDetails: {
+    de: 'Fischarten & Gewässerdetails',
+    en: 'Species & water details',
+  },
+  waterReportedSpecies: {
+    de: 'Gemeldeter Fischbestand',
+    en: 'Reported fish species',
+  },
+  waterArea: { de: 'Fläche', en: 'Area' },
+  waterAverageDepth: { de: 'Mittlere Tiefe', en: 'Average depth' },
+  waterMaxDepth: { de: 'Maximale Tiefe', en: 'Maximum depth' },
+  waterSubstrate: { de: 'Untergrund', en: 'Bottom type' },
+  waterRetrieved: { de: 'Abgerufen', en: 'Retrieved' },
   mapDirections: { de: 'Route', en: 'Directions' },
   mapLocation: { de: 'Mein Standort', en: 'My location' },
   mapLocating: {

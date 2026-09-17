@@ -12,6 +12,7 @@ import { brandenburgWaters } from '../data/waters/brandenburgWaters'
 import { directionsUrl } from '../lib/maps'
 import { usePrefs } from '../lib/prefs'
 import { CurrentLocation } from './CurrentLocation'
+import { WaterEnrichment } from './WaterEnrichment'
 
 const MAX_RESULTS = 30
 const FOCUS_ZOOM = 13
@@ -221,6 +222,7 @@ function WaterDetails({ water }: { water: BrandenburgWater }) {
         </p>
       )}
       {water.note && <p className="mt-0.5 text-xs italic">{water.note}</p>}
+      <WaterEnrichment region="brandenburg" waterId={water.id} popup />
       <a
         href={directionsUrl(water.lat, water.lng)}
         target="_blank"
@@ -295,27 +297,30 @@ function WaterRow({
     .filter(Boolean)
     .join(' · ')
   return (
-    <li className="flex items-start gap-1 px-1 py-0.5">
-      <button
-        type="button"
-        onClick={() => onSelect(water)}
-        className="hover:bg-water-50 dark:hover:bg-water-800 min-w-0 flex-1 rounded-lg px-2 py-1.5 text-left text-sm transition-colors"
-      >
-        <span className="font-semibold">{water.name}</span>
-        <span className="block text-xs text-slate-500 dark:text-slate-400">
-          {facts}
-        </span>
-      </button>
-      <a
-        href={directionsUrl(water.lat, water.lng)}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={`${t('mapDirections')}: ${water.name}`}
-        title={t('mapDirections')}
-        className="hover:bg-water-50 dark:hover:bg-water-800 mt-1 shrink-0 rounded-lg px-2 py-1.5 text-sm transition-colors"
-      >
-        🧭
-      </a>
+    <li className="px-1 py-0.5">
+      <div className="flex items-start gap-1">
+        <button
+          type="button"
+          onClick={() => onSelect(water)}
+          className="hover:bg-water-50 dark:hover:bg-water-800 min-w-0 flex-1 rounded-lg px-2 py-1.5 text-left text-sm transition-colors"
+        >
+          <span className="font-semibold">{water.name}</span>
+          <span className="block text-xs text-slate-500 dark:text-slate-400">
+            {facts}
+          </span>
+        </button>
+        <a
+          href={directionsUrl(water.lat, water.lng)}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${t('mapDirections')}: ${water.name}`}
+          title={t('mapDirections')}
+          className="hover:bg-water-50 dark:hover:bg-water-800 mt-1 shrink-0 rounded-lg px-2 py-1.5 text-sm transition-colors"
+        >
+          🧭
+        </a>
+      </div>
+      <WaterEnrichment region="brandenburg" waterId={water.id} collapsible />
     </li>
   )
 }

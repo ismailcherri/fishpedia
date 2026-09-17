@@ -113,5 +113,34 @@ polygons). Regenerate the generated
 node scripts/fetch-brandenburg.mjs
 ```
 
+### Supplementary water details
+
+Matched Berlin and Brandenburg waters show reported fish species, area, depth
+and bottom type from [Fisch-Hitparade](https://www.fisch-hitparade.de/gewaesser/liste/).
+Expand **Fischarten & Gewässerdetails** in a water list or open its map popup.
+Known species link to the existing fish pages. Each entry links to its source
+and shows the retrieval date; this is not an independent verification date.
+The bundled details work offline; opening the source website requires internet.
+
+```bash
+npm run fetch:fhp             # first import, or resume from cached pages
+npm run fetch:fhp -- --refresh # fetch current data again
+npm run fetch:fhp -- --offline # rebuild using only cached pages
+```
+
+The importer follows the Germany → Berlin + Brandenburg directory filter, uses
+two concurrent requests, and caches responses in ignored `.cache/fisch-hitparade/`.
+It writes `src/data/waters/fischHitparade.json` only after all pages succeed.
+The cache report lists unmatched entries, ambiguous matches and errors.
+Matching uses a unique official water number (with a location sanity check),
+or a unique exact normalized name within 750 m when no number is published.
+Ambiguous matches are omitted. Thus coverage is intentionally incomplete.
+After updating the official water catalogs, rerun this import and `npm test`.
+
+This supplementary dataset is for this app's personal reference use. It imports
+factual fields only; article text, photos and forum posts are excluded. Official
+permit rules, association data and map boundaries remain in their existing files.
+Normal builds and page visits never scrape the source website.
+
 ⚠️ The app shows guidance, not legal advice: official publications and
 water-specific rules (Gewässerordnung, Erlaubnisschein) always prevail.

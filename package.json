@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "fetch:fhp": "node scripts/fetch-fisch-hitparade.mjs",
     "dev": "vite dev",
     "build": "vite build && node scripts/postbuild.mjs",
     "preview": "vite preview",

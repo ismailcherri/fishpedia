@@ -9,6 +9,7 @@ import type { ReactNode } from 'react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { BrandenburgPage } from '../components/BrandenburgWaters'
 import { CurrentLocation } from '../components/CurrentLocation'
+import { WaterEnrichment } from '../components/WaterEnrichment'
 import { berlinWaters } from '../data/waters/berlinWaters'
 import { permit } from '../data/waters/permit'
 import type { WaterArea, WaterGeometry } from '../data/waters/types'
@@ -151,7 +152,7 @@ function MapPageWithMap() {
               position={selected.anchor}
               onCloseClick={() => setSelected(null)}
             >
-              <div className="max-w-56 text-slate-800">
+              <div className="max-w-64 text-slate-800">
                 <strong>{selected.water.name}</strong>
                 {selected.water.permitId && (
                   <p className="mt-0.5 text-xs text-slate-500">
@@ -168,6 +169,11 @@ function MapPageWithMap() {
                     ({t('mapApproximate')})
                   </p>
                 )}
+                <WaterEnrichment
+                  region="berlin"
+                  waterId={selected.water.id}
+                  popup
+                />
                 <a
                   href={directionsUrl(selected.water.geometry)}
                   target="_blank"
@@ -377,39 +383,42 @@ function WaterList({
       </h3>
       <ul>
         {waters.map((w) => (
-          <li key={w.id} className="flex items-start gap-1">
-            <button
-              type="button"
-              onClick={() => onSelect(w)}
-              className="hover:bg-water-50 dark:hover:bg-water-800 min-w-0 flex-1 rounded-lg px-2 py-1.5 text-left text-sm transition-colors"
-            >
-              <span className="font-semibold">{w.name}</span>
-              {w.permitId && (
-                <span className="block text-xs text-slate-500 dark:text-slate-400">
-                  {w.permitId}
-                </span>
-              )}
-              {w.note && (
-                <span className="block text-xs text-slate-500 dark:text-slate-400">
-                  {tx(w.note)}
-                </span>
-              )}
-              {w.approximate && !w.note && (
-                <span className="block text-xs text-slate-400 dark:text-slate-500">
-                  {t('mapApproximate')}
-                </span>
-              )}
-            </button>
-            <a
-              href={directionsUrl(w.geometry)}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`${t('mapDirections')}: ${w.name}`}
-              title={t('mapDirections')}
-              className="hover:bg-water-50 dark:hover:bg-water-800 shrink-0 rounded-lg px-2 py-1.5 text-sm transition-colors"
-            >
-              🧭
-            </a>
+          <li key={w.id}>
+            <div className="flex items-start gap-1">
+              <button
+                type="button"
+                onClick={() => onSelect(w)}
+                className="hover:bg-water-50 dark:hover:bg-water-800 min-w-0 flex-1 rounded-lg px-2 py-1.5 text-left text-sm transition-colors"
+              >
+                <span className="font-semibold">{w.name}</span>
+                {w.permitId && (
+                  <span className="block text-xs text-slate-500 dark:text-slate-400">
+                    {w.permitId}
+                  </span>
+                )}
+                {w.note && (
+                  <span className="block text-xs text-slate-500 dark:text-slate-400">
+                    {tx(w.note)}
+                  </span>
+                )}
+                {w.approximate && !w.note && (
+                  <span className="block text-xs text-slate-400 dark:text-slate-500">
+                    {t('mapApproximate')}
+                  </span>
+                )}
+              </button>
+              <a
+                href={directionsUrl(w.geometry)}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${t('mapDirections')}: ${w.name}`}
+                title={t('mapDirections')}
+                className="hover:bg-water-50 dark:hover:bg-water-800 shrink-0 rounded-lg px-2 py-1.5 text-sm transition-colors"
+              >
+                🧭
+              </a>
+            </div>
+            <WaterEnrichment region="berlin" waterId={w.id} collapsible />
           </li>
         ))}
       </ul>
